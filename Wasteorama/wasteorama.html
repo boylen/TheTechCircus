@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waste-o-Rama: The Greatest Hits of Nothingburgers, U-Turns, and Cash Bonfires</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="headline">Waste-o-Rama: The Greatest Hits of Nothingburgers, U-Turns, and Cash Bonfires</div>
+        <div class="subtitle">
+            The reality show you didn’t sign up for, but you’ll love to watch.<br>
+            <span style="color:#E63946;">Enjoy the ride (or the crash).</span>
+        </div>
+    </div>
+
+    <!-- Example of a failed initiative -->
+    <div style="text-align:center; margin: 40px 0;">
+        <button class="fail-data" onclick="loadFailures()">Update & Display All Failed Initiatives</button>
+    </div>
+    
+    <div id="failures-container"></div>
+
+    <!-- More initiatives can go below, each in a similar fail-section block -->
+
+    <div class="footer">
+        &copy; 2025 The Waste-o-Rama Show — Just me and my AI having a laugh at political blunders.
+    </div>
+    <script>
+        async function loadFailures() {
+          const container = document.getElementById('failures-container');
+          container.innerHTML = ''; // Clear existing
+      
+          try {
+            const res = await fetch('failures.json');
+            const data = await res.json();
+      
+            // Sort in reverse chronological order
+            data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+            data.forEach(fail => {
+              const section = document.createElement('div');
+              section.className = 'fail-section';
+      
+              section.innerHTML = `
+                <div class="fail-title">${fail.title}</div>
+                <div class="fail-tagline">${fail.tagline}</div>
+                <div class="fail-content">${fail.description.replace(/\n/g, '<br>')}</div>
+              `;
+      
+              container.appendChild(section);
+            });
+      
+          } catch (error) {
+            container.innerHTML = '<p style="color:red;">Failed to load data.</p>';
+            console.error('Error loading failures:', error);
+          }
+        }
+      </script>
+</body>
+</html>

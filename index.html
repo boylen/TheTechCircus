@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Tech Circus</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    background: #FAF3E3;
+    color: #222;
+    font-family: 'Lato', Arial, sans-serif;
+    margin: 0;
+}
+.header {
+    text-align: center;
+    padding: 60px 0 30px 0;
+    background: #fff;
+    border-bottom: 4px solid #222;
+}
+.hero-illustration {
+    width: 380px;
+    max-width: 95vw;
+    margin: 0 auto 24px auto;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px #0002;
+    border: 4px solid #FFC300;
+}
+.headline {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+    color: #E63946;
+    margin: 0 0 10px 0;
+}
+.subtitle {
+    font-size: 1.3em;
+    color: #457B9D;
+    font-style: italic;
+    margin-bottom: 28px;
+}
+.acts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    padding: 40px 10vw;
+    background: #FAF3E3;
+}
+.act-card {
+    background: #fff;
+    border: 2px solid #222;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px #0001;
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+.act-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 32px #FFC30044;
+}
+.act-illustration {
+    width: 120px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0001;
+}
+.act-title {
+    font-family: 'Abril Fatface', serif;
+    color: #E63946;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+.act-desc {
+    color: #444;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+}
+.share-btn {
+    background: #FFC300;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 18px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Lato', Arial, sans-serif;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+.share-btn:hover {
+    background: #FFD700;
+}
+  /* -------------------------------- */
+  /* Global button style for Explore */
+  .btn {
+      background-color: #E63946;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      font-family: 'Lato', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+      cursor: pointer;
+  }
+  .btn:hover {
+      background-color: #D62828;
+  }
+
+.footer {
+    text-align: center;
+    color: #888;
+    background: #fff;
+    padding: 28px 0 16px 0;
+    font-size: 1.1em;
+    margin-top: 60px;
+    border-top: 3px solid #222;
+    font-family: 'Lato', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <img src="arena-editorial.png" class="hero-illustration" alt="Editorial Tech Circus Arena">
+    <div class="headline">The Tech Circus</div>
+    <div class="subtitle">
+        Where technology and spectacle collide.<br>
+        <span style="color:#E63946;">Zero sales pitch.</span>
+    </div>
+</div>
+<div class="acts-grid">
+    <div class="act-card" onclick="location.href='legal-circus.html'">
+        <img src="legal-circus-spotlight.png" class="act-illustration" alt="Legal Circus Editorial Art">
+        <div class="act-title">Trump's Legal Circus</div>
+        <div class="act-desc">A running tab of legal costs, with all the drama of a main-ring act.</div>
+        <button class="share-btn">Share</button>
+    </div>
+    <div class="act-card" onclick="location.href='Wasteorama/wasteorama.html'">
+        <img src="trump-failures.png" class="act-illustration" alt="Trump Waste-o-Rama Editorial Art">
+        <div class="act-title">Trump's Waste-o-Rama</div>
+        <div class="act-desc">The greatest hits of nothingburgers, U-turns, and cash bonfires.</div>
+        <button class="btn" onclick="location.href='Wasteorama/wasteorama.html'">Explore</button>
+    </div>
+    
+    <div class="act-card" onclick="location.href='ai-illusions.html'">
+        <img src="ai-illusions.png" class="act-illustration" alt="AI Illusions Editorial Art">
+        <div class="act-title">AI Illusions</div>
+        <div class="act-desc">Robots, holograms, and the digital magic behind the curtain.</div>
+        <button class="share-btn">Share</button>
+    </div>
+    <!-- Add more acts here -->
+</div>
+<div class="footer">
+    &copy; 2025 The Tech Circus &mdash; Just me and my ai doing research-y stuff.
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    background: #FAF3E3;
+    color: #222;
+    font-family: 'Lato', Arial, sans-serif;
+    margin: 0;
+}
+.header {
+    text-align: center;
+    padding: 60px 0 30px 0;
+    background: #fff;
+    border-bottom: 4px solid #222;
+}
+.headline {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+    color: #E63946;
+    margin: 0 0 10px 0;
+}
+.subtitle {
+    font-size: 1.3em;
+    color: #457B9D;
+    font-style: italic;
+    margin-bottom: 28px;
+}
+.fail-section {
+    background: #fff;
+    border: 2px solid #222;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px #0001;
+    padding: 24px 24px;
+    margin: 40px 10vw;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.fail-section:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 32px #FFC30044;
+}
+.fail-title {
+    font-family: 'Abril Fatface', serif;
+    color: #E63946;
+    font-size: 2.5em;
+    margin-bottom: 16px;
+}
+.fail-tagline {
+    color: #444;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.fail-content {
+    color: #444;
+    font-size: 1.1em;
+    margin-bottom: 24px;
+}
+.fail-data {
+    background: #FFC300;
+    color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-top: 12px;
+    transition: background 0.2s;
+}
+.fail-data:hover {
+    background: #FFD700;
+}
+.footer {
+    text-align: center;
+    color: #888;
+    background: #fff;
+    padding: 28px 0 16px 0;
+    font-size: 1.1em;
+    margin-top: 60px;
+    border-top: 3px solid #222;
+    font-family: 'Lato', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+.btn {
+    background-color: #E63946;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #D62828;
+}
