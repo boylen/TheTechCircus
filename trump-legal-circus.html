@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trump Legal Circus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ... your CSS from before ... */
+    body { font-family: Lato, Arial, sans-serif; background: #fffbe7; color: #222; margin: 0;}
+    .headline { font-family: 'Abril Fatface', cursive; color: #e63946; font-size: 2.3em; text-align: center; margin: 32px 0 8px;}
+    .subtitle { color: #b45f06; font-style: italic; text-align: center; margin-bottom: 24px;}
+    .stats-bar { display: flex; gap: 32px; align-items: center; margin: 20px auto; font-size: 1.18em; max-width: 96%; background: #f7fafc; border-radius: 12px; padding: 15px;}
+    .scoreboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; max-width: 1100px; margin: 40px auto 24px auto; padding: 0 20px;}
+    .scorecard { background: #f7fafc; border-radius: 15px; padding: 24px 30px; box-shadow: 0 4px 12px rgba(44,62,80,0.07); text-align: center; min-width: 220px; flex: 1 1 220px;}
+    .scorecard h3 { font-size: 1.18em; margin-bottom: 11px; color: #2a4365;}
+    .scorecard p { font-size: 1.08em; color: #4a5568; line-height: 1.5; margin: 0;}
+    .current-date { text-align: right; color: #666; margin: 0 3vw 20px; font-size: 1em;}
+    table { width: 96%; margin: 20px auto; border-collapse: separate; border-spacing: 0; background: #fffbe7; border-radius: 14px; box-shadow: 0 8px 32px rgba(44, 62, 80, 0.10);}
+    caption { caption-side: top; font-family: 'Abril Fatface', cursive; font-size: 1.3em; color: #e63946; padding: 18px 0 0 0;}
+    th, td { padding: 14px 16px; border-bottom: 1px solid #f9c846; text-align: left;}
+    th { background: #e63946; color: #fff; font-family: 'Abril Fatface', cursive; font-size: 1.1em;}
+    .status-badge { display: inline-block; padding: 6px 14px; border-radius: 999px; font-weight: 700; background: #457b9d; color: #fff;}
+    .details-btn { background: #2a4365; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: background 0.3s;}
+    .details-btn:hover { background: #e63946;}
+    .details-content { display: none; background: #ebf8ff; padding: 16px; border-radius: 8px; margin-top: 8px; position: absolute; z-index: 2; min-width: 250px; max-width: 350px; box-shadow: 0 2px 12px #f9c84644; color: #2c5282;}
+    tr.details-row td { background: #ebf8ff !important; }
+    td.relative { position: relative;}
+    .disclaimer { margin: 38px auto 0 auto; text-align: center; color: #888; font-size: 1.08em; max-width: 800px; padding: 0 10px; background: #fffbe7; border-radius: 12px; border: 2px solid #f9c846; display: block;}
+    .footer { text-align: center; color: #aaa; font-size: 1em; margin: 38px 0 18px 0; padding-bottom: 12px; letter-spacing: 0.03em;}
+    .load-more { background: #e63946; color: white; padding: 12px 24px; border-radius: 25px; margin: 20px auto; display: block; transition: background 0.3s; border: none; font-size: 1em;}
+    .load-more:hover { background: #b92d3a;}
+  </style>
+</head>
+<body>
+  <div class="headline">Trump Legal Circus</div>
+  <div class="subtitle"><span id="snark-legal"></span></div>
+  
+
+  <!-- Remove any lines like |Case|Category|...| -->
+
+  <table id="main-docket-table">
+    <caption>Main Docket: Trump Legal Proceedings</caption>
+    <thead>
+      <tr>
+        <th>Case</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Cost</th>
+        <th>Workhours</th>
+        <th>Timeframe</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button class="load-more" id="loadMoreMain">Load More Legal Drama 🎪</button>
+
+  <table id="sideshow-docket-table">
+    <caption>The Sideshow Docket: Trump-Adjacent Legal Proceedings</caption>
+    <thead>
+      <tr>
+        <th>Case</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Cost</th>
+        <th>Workhours</th>
+        <th>Timeframe</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button class="load-more" id="loadMoreSideshow">Load More Sideshow Drama 🎪</button>
+
+  <table>
+    <caption>Trump’s Legal Stats (1973–2016): The Pre-Presidency “Litigation Olympics”</caption>
+    <thead>
+      <tr>
+        <th>Lawsuit Category</th>
+        <th>Estimated Number</th>
+        <th>Win Rate</th>
+        <th>Typical Opponent</th>
+        <th>Expensive Hobby Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Contract/Business</td><td>1,900</td><td>~92%</td><td>Corporations, Vendors</td><td>Winning by attrition, one invoice at a time.</td></tr>
+      <tr><td>Real Estate/Property</td><td>700</td><td>~90%</td><td>Partners, Cities</td><td>Zoning law: Trump’s favorite board game.</td></tr>
+      <tr><td>Tax Disputes</td><td>100</td><td>~80%</td><td>IRS, States</td><td>Tax code: read it, bend it, litigate it.</td></tr>
+      <tr><td>Employment/Labor</td><td>200</td><td>~60%</td><td>Employees, Unions</td><td>Winning the battle, losing the workforce.</td></tr>
+      <tr><td>Defamation/Personal</td><td>100</td><td>~50%</td><td>Individuals, Media</td><td>Defamation or just a difference of opinion?</td></tr>
+      <tr><td>Casino/Patron</td><td>100</td><td>~70%</td><td>Gamblers, Customers</td><td>Lost at blackjack? Try your luck in court.</td></tr>
+      <tr><td>Little Guy Suits</td><td>100</td><td>~60%</td><td>Contractors, Tenants</td><td>The only thing smaller than the payout is the patience.</td></tr>
+      <tr><td>Government/Regulatory</td><td>100</td><td>~50%</td><td>City/State/Federal</td><td>Permits? More like permits-to-sue.</td></tr>
+      <tr><td>Sexual Harassment/Assault</td><td>20</td><td>&lt;50%</td><td>Individuals</td><td>Deny, delay, settle, NDA.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="stats-bar">
+    <div><b>Total Legal Actions:</b> 3,320</div>
+    <div><b>Win$</b> $2.3B</div>
+    <div><b>Loss$</b> $86.8M</div>
+  </div>
+  <div class="scoreboard" id="scoreboard"></div>
+  <div class="current-date" id="current-date"></div>
+
+  <div class="disclaimer" id="disclaimer"></div>
+  <div class="footer">
+    &copy; 2025 The Tech Circus — Just me and my AI doing research-y stuff. 🎠
+  </div>
+  <script>
+    // Scoreboard metrics
+    document.getElementById('scoreboard').innerHTML = `
+      <div class="scorecard"><h3>💰 Taxpayer Burden</h3><p>Total Known Cost: $30.6M</p><p>Spent at Trump Properties: $2.5M</p></div>
+      <div class="scorecard"><h3>🎪 Main Docket</h3><p>Criminal Charges: 91</p><p>Indictments: 4</p><p>Civil Suits: 30+</p><p>Financial Exposure: $500M+</p></div>
+      <div class="scorecard"><h3>🎭 Sideshow Docket</h3><p>Major Cases: 5+</p><p>Settlements / Costs: $800M+</p><p>Indicted / Sanctioned: 15+</p><p>PAC Legal Spending: $80M+</p></div>
+      <div class="scorecard"><h3>⚖️ Other Key Metrics</h3><p>Active Criminal Cases: 4</p><p>Recent Sanctions: $938K</p><p>Sanction Details: Clinton/DNC (Mar 2022 – Feb 2024)</p></div>
+    `;
+    // Current date/time
+    function updateDate() {
+      const now = new Date();
+      document.getElementById('current-date').textContent =
+        'Current date: ' + now.toLocaleString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit', hour12:true});
+    }
+    updateDate();
+
+    // Details button functionality (works for both tables)
+    function toggleDetailsRow(btn) {
+      // Remove any other open details rows
+      document.querySelectorAll('.details-row').forEach(row => row.remove());
+      const tr = btn.closest('tr');
+      let next = tr.nextElementSibling;
+      if (next && next.classList.contains('details-row')) {
+        next.remove();
+        return;
+      }
+      const details = btn.getAttribute('data-details') || 'No details available.';
+      const detailsRow = document.createElement('tr');
+      detailsRow.className = 'details-row';
+      detailsRow.innerHTML = `<td colspan="${tr.children.length}"><div class="details-content" style="display:block;">${details}</div></td>`;
+      tr.parentNode.insertBefore(detailsRow, tr.nextSibling);
+    }
+
+    // Pagination state
+    let mainPage = 1, sideshowPage = 1, pageSize = 5;
+    let mainData = [], sideshowData = [];
+
+    // Load dynamic tables from JSON
+    fetch('trump-legal-cases.json')
+      .then(r => r.json())
+      .then(data => {
+        mainData = data.main_docket;
+        sideshowData = data.sideshow_docket;
+        renderMainTable();
+        renderSideshowTable();
+      });
+
+    function renderMainTable() {
+      const tbody = document.querySelector('#main-docket-table tbody');
+      tbody.innerHTML = '';
+      mainData.slice(0, mainPage * pageSize).forEach(row => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${row.title}</td>
+            <td>${row.category}</td>
+            <td>${row.status}</td>
+            <td>${typeof row.cost === 'number' ? '$' + row.cost.toLocaleString() : row.cost}</td>
+            <td>${typeof row.workhours === 'number' ? row.workhours.toLocaleString() + ' hrs' : row.workhours}</td>
+            <td>${row.timeframe}</td>
+            <td>
+              <button class="details-btn" onclick="toggleDetailsRow(this)" data-details="${row.description.replace(/"/g, '&quot;')}${row.source ? `<br><a href='${row.source}' target='_blank'>Source 🔗</a>` : ''}">Details</button>
+            </td>
+          </tr>
+        `;
+      });
+      document.getElementById('loadMoreMain').style.display =
+        (mainPage * pageSize < mainData.length) ? 'block' : 'none';
+    }
+    function renderSideshowTable() {
+      const tbody = document.querySelector('#sideshow-docket-table tbody');
+      tbody.innerHTML = '';
+      sideshowData.slice(0, sideshowPage * pageSize).forEach(row => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${row.title}</td>
+            <td>${row.category}</td>
+            <td>${row.status}</td>
+            <td>${typeof row.cost === 'number' ? '$' + row.cost.toLocaleString() : row.cost}</td>
+            <td>${typeof row.workhours === 'number' ? row.workhours.toLocaleString() + ' hrs' : row.workhours}</td>
+            <td>${row.timeframe}</td>
+            <td>
+              <button class="details-btn" onclick="toggleDetailsRow(this)" data-details="${row.description.replace(/"/g, '&quot;')}${row.source ? `<br><a href='${row.source}' target='_blank'>Source 🔗</a>` : ''}">Details</button>
+            </td>
+          </tr>
+        `;
+      });
+      document.getElementById('loadMoreSideshow').style.display =
+        (sideshowPage * pageSize < sideshowData.length) ? 'block' : 'none';
+    }
+    document.getElementById('loadMoreMain').onclick = function() {
+      mainPage++;
+      renderMainTable();
+    };
+    document.getElementById('loadMoreSideshow').onclick = function() {
+      sideshowPage++;
+      renderSideshowTable();
+    };
+
+    // Disclaimer randomizer
+    const disclaimers = [
+      "Disclaimer: AI-generated, human-edited, and not to be used for actual life decisions.",
+      "Disclaimer: No actual barristers were harmed in the making of this website.",
+      "Disclaimer: All stats are for fun and may be less accurate than a campaign promise.",
+      "Disclaimer: If you’re reading this for legal advice, you’re already in a spot of bother."
+    ];
+    document.getElementById('disclaimer').textContent =
+      disclaimers[Math.floor(Math.random() * disclaimers.length)];
+  </script>
+  <script>
+    // Step 1: Make a list of your favorite snarky comments
+    var snarkyComments = [
+      "Step right up! Witness more indictments than a season of Law & Order.",
+      "Watch legal history unfold, one subpoena at a time.",
+      "More plot twists than a soap opera marathon.",
+      "If you like court drama, you’re in for a treat (and possibly a headache).",
+      "Legal circus: now with extra popcorn and subpoenas.",
+      "Bring your own gavel—you're going to want to judge."
+    ];
+    
+    // Step 2: Pick a random one every time
+    function showRandomSnark() {
+      var randomIndex = Math.floor(Math.random() * snarkyComments.length);
+      var snarkSpan = document.getElementById('snark-legal');
+      if (snarkSpan) {
+        snarkSpan.textContent = snarkyComments[randomIndex];
+      }
+    }
+    
+    // Step 3: Run the function when the page loads
+    showRandomSnark();
+    </script>
+    
+</body>
+</html>

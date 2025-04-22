@@ -1,0 +1,126 @@
+{
+  "main_docket": [
+    {
+      "title": "GA Election Interference",
+      "category": "Criminal",
+      "status": "Pre-Trial",
+      "cost": 1800000,
+      "workhours": 2100,
+      "timeframe": "Aug 2023 – Present",
+      "description": "RICO charges for allegedly conspiring to overturn 2020 election results.",
+      "source": "https://apnews.com/projects/trump-investigations-civil-criminal-tracker/"
+    },
+    {
+      "title": "Jan. 6 Federal Charges",
+      "category": "Criminal",
+      "status": "Stay Pending Appeal",
+      "cost": 3100000,
+      "workhours": 2000,
+      "timeframe": "Aug 2023 – Present",
+      "description": "Federal indictment for conspiracy to defraud the US and obstruct official proceeding.",
+      "source": "https://www.justsecurity.org/trump-legal-tracker/"
+    },
+    {
+      "title": "Mar-a-Lago Documents Case",
+      "category": "Criminal",
+      "status": "Pending",
+      "cost": 4200000,
+      "workhours": 2300,
+      "timeframe": "June 2023 – Present",
+      "description": "Federal charges for mishandling classified documents and obstruction. Trial delayed repeatedly.",
+      "source": ""
+    },
+    {
+      "title": "NY Hush Money Conviction",
+      "category": "Criminal",
+      "status": "Pending Appeal",
+      "cost": 2500000,
+      "workhours": 3200,
+      "timeframe": "Mar 2023 – Nov 2025",
+      "description": "34 felony counts for falsifying business records to conceal payments to Stormy Daniels. Convicted May 2024; sentencing delayed to Nov 2025 pending SCOTUS immunity ruling.",
+      "source": ""
+    },
+    {
+      "title": "Trump Organization Fraud (NY)",
+      "category": "Financial",
+      "status": "Appealed",
+      "cost": 12000000,
+      "workhours": 1600,
+      "timeframe": "Oct 2022 – Mar 2025",
+      "description": "Civil fraud lawsuit by NY AG; $454M judgment against Trump and his company. Appeal ongoing.",
+      "source": ""
+    },
+    {
+      "title": "Sanctuary Cities Funding Freeze",
+      "category": "Civil",
+      "status": "Blocked",
+      "cost": 3500000,
+      "workhours": 800,
+      "timeframe": "Feb 2025 – Present",
+      "description": "Multiple cities sued over EO 14159 withholding funds from sanctuary jurisdictions. Courts temporarily blocked enforcement, citing constitutional violations.",
+      "source": ""
+    },
+    {
+      "title": "Clinton/DNC RICO Lawsuit",
+      "category": "Civil",
+      "status": "Sanctioned",
+      "cost": 1000000,
+      "workhours": 400,
+      "timeframe": "Mar 2022 – Feb 2024",
+      "description": "Frivolous suit alleging 2016 election conspiracy. Sanctioned $938K for 'strategic abuse of judicial process.'",
+      "source": ""
+    }
+  ],
+  "sideshow_docket": [
+    {
+      "title": "Dominion v. Fox News, Giuliani, Powell, Lindell, et al.",
+      "category": "Defamation (2020 Election)",
+      "status": "Fox settled; others ongoing",
+      "cost": 787500000,
+      "workhours": "Unknown",
+      "timeframe": "2021–2024",
+      "description": "Fox settled; others ongoing.",
+      "source": ""
+    },
+    {
+      "title": "Arizona Fake Elector Indictments",
+      "category": "Election Interference",
+      "status": "Indictments filed",
+      "cost": "Indictments filed",
+      "workhours": "State-funded; some PAC-paid",
+      "timeframe": "2024–present",
+      "description": "",
+      "source": ""
+    },
+    {
+      "title": "Georgia RICO (Election Subversion)",
+      "category": "Racketeering, Conspiracy",
+      "status": "Some plea deals, others pending",
+      "cost": "State-funded; some PAC-paid",
+      "workhours": "Ongoing",
+      "timeframe": "2023–present",
+      "description": "",
+      "source": ""
+    },
+    {
+      "title": "State Bar Disciplinary Actions",
+      "category": "Professional Misconduct",
+      "status": "Disbarment/sanctions in progress",
+      "cost": "Defendants’ cost; some donor-funded",
+      "workhours": "Ongoing",
+      "timeframe": "2022–present",
+      "description": "",
+      "source": ""
+    },
+    {
+      "title": "Legal Bills Paid by Trump PACs",
+      "category": "Legal Defense Funding",
+      "status": "Ongoing",
+      "cost": "~$80M (since 2021)",
+      "workhours": "Ongoing",
+      "timeframe": "2021–present",
+      "description": "",
+      "source": ""
+    }
+  ]
+}

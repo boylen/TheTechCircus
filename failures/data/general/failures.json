@@ -1,0 +1,57 @@
+[
+  {
+    "id": "luxury-golf",
+    "title": "Luxury Golf & Travel",
+    "category": "Brain Fart",
+    "date": "2025-04-20",
+    "labels": ["Brain Fart", "Resource Drain", "Showboating"],
+    "description": "Frequent presidential golf trips (often to Trump properties), requiring Air Force One, Secret Service, and staff—padding his own pockets while taxpayers foot the bill.",
+    "impact": "$10.7M (2025), $152M (total)",
+    "source": "https://www.gao.gov/products/gao-19-178",
+    "fullDetails": "**Secret Service Spending**: The GAO found that the Secret Service spent approximately $396,000 on protective equipment and services for four trips the president took to Mar-a-Lago in 2017, working out to about $99,000 per trip.\n\n**Travel Costs**: Air Force One costs approximately $142,380 per hour to operate. With flights to Mar-a-Lago taking about 4.5 hours, each round-trip costs taxpayers over $1.2 million in flight costs alone."
+  },
+  {
+    "id": "military-parade",
+    "title": "Military Parade Mania",
+    "category": "Brain Fart",
+    "date": "2025-04-21",
+    "labels": ["Showboating", "Brain Fart", "Nothingburger"],
+    "description": "Grandiose parade proposals inspired by France's Bastille Day—millions spent on planning before being canceled, with nothing to show but headlines and invoices.",
+    "impact": "$92M (estimate)",
+    "source": "https://www.npr.org/2018/08/16/639362894/pentagon-postpones-military-parade-until-2019",
+    "fullDetails": "**Planning Costs**: Despite no parade materializing, millions were spent on preliminary planning and logistics.\n\n**Congressional Criticism**: Senator Jack Reed called it \"a waste of money and an unnecessary burden on our troops and military resources.\"\n\n**Cancellation**: Eventually postponed and then quietly canceled amid ballooning cost estimates from the initial $12M to $92M."
+  },
+  {
+    "id": "grant-contract-cancellations",
+    "title": "Grant & Contract Cancellations",
+    "category": "Brain Fart",
+    "date": "2025-03-15",
+    "labels": ["U-Turn", "Brain Fart", "Nothingburger"],
+    "description": "Abruptly axed grants and contracts (e.g., $50M environmental justice grant, $881M in education contracts), wasting funds already spent and leaving vital work unfinished.",
+    "impact": "$50M, $881M",
+    "source": "https://example.com/grant-cancellations",
+    "fullDetails": "Details about the grant cancellations and their impact."
+  },
+  {
+    "id": "doge-efficiency",
+    "title": "DOGE \"Efficiency\" Theater",
+    "category": "Brain Fart",
+    "date": "2025-02-10",
+    "labels": ["Brain Fart", "Nothingburger", "Showboating"],
+    "description": "Department of Government Efficiency (DOGE) claims billions \"recovered,\" but watchdogs say it ignores Trump's own excesses and often mislabels routine spending as \"fraud.\"",
+    "impact": "$1.9B (claimed)",
+    "source": "https://example.com/doge-efficiency",
+    "fullDetails": "Details about the DOGE program and its questionable claims."
+  },
+  {
+    "id": "legal-ceremonial",
+    "title": "Legal/Ceremonial Spectacles",
+    "category": "Brain Fart",
+    "date": "2025-01-05",
+    "labels": ["Brain Fart", "Showboating", "Resource Drain"],
+    "description": "Legal costs, security, and logistics for Trump's court appearances and rallies require significant federal resources—millions spent for political theater.",
+    "impact": "Millions (undisclosed)",
+    "source": "https://example.com/legal-spectacles",
+    "fullDetails": "Details about the ceremonial spectacles and their costs."
+  }
+]

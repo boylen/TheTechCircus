@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎪 The Tech Circus 🎪</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fffbe7 0%, #ffe3e3 100%);
+      font-family: 'Lato', Arial, sans-serif;
+      color: #222;
+    }
+    .header {
+      text-align: center;
+      padding: 48px 10px 32px 10px;
+      background: linear-gradient(120deg, #fffbe7 70%, #ffe3e3 100%);
+      border-bottom: 7px solid #f9c846;
+      position: relative;
+    }
+    .header:before, .header:after {
+      content: "🎪";
+      font-size: 2.4em;
+      position: absolute;
+      top: 18px;
+    }
+    .header:before { left: 22px; }
+    .header:after { right: 22px; }
+    .hero-illustration {
+      max-width: 160px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 16px #ffbe76aa);
+    }
+    .headline {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 2.7em;
+      color: #e63946;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #f9c846, 4px 4px 0 #fffbe7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .headline .emoji {
+      font-size: 1.2em;
+      vertical-align: middle;
+    }
+    .subtitle {
+      font-size: 1.25em;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+    .acts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 40px auto 30px auto;
+      padding: 0 20px;
+    }
+    .act-card {
+      background: linear-gradient(120deg, #fffbe7 80%, #ffe3e3 100%);
+      border-radius: 18px;
+      box-shadow: 0 6px 28px rgba(234, 179, 8, 0.13);
+      border: 3px solid #f9c846;
+      padding: 26px 22px 24px 22px;
+      text-align: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .act-card:hover {
+      transform: translateY(-7px) scale(1.025) rotate(-1deg);
+      box-shadow: 0 12px 36px rgba(230, 57, 70, 0.17);
+      border-color: #e63946;
+      background: linear-gradient(120deg, #ffe3e3 80%, #fffbe7 100%);
+    }
+    .act-emoji {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .act-illustration {
+      max-width: 90px;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 2px 8px #f9c84655);
+    }
+    .act-title {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 1.23em;
+      color: #e63946;
+      margin-bottom: 7px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .act-desc {
+      min-height: 52px;
+      font-size: 1.07em;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+    }
+    .btn, .share-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 22px;
+  font-size: 1.05em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s;
+  margin-top: 6px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 10px #f9c84633;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.btn:hover {
+  background: #b92d3a;
+}
+.share-btn {
+  background: #457b9d;
+}
+.share-btn:hover {
+  background: #31597a;
+}
+  /* -------------------------------- */
+  /* Global button style for Explore */
+  .btn {
+      background-color: #E63946;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      font-family: 'Lato', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+      cursor: pointer;
+  }
+  .btn:hover {
+      background-color: #D62828;
+  }
+
+    /* Tooltip styling for highbrow rollover */
+    .tooltip {
+      border-bottom: 2px dashed #e63946;
+      cursor: pointer;
+      position: relative;
+      color: #e63946;
+      font-weight: 500;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+    .tooltip:hover {
+      color: #f9c846;
+    }
+    .tooltiptext {
+      visibility: hidden;
+      min-width: 120px;
+      background-color: #fffbe7;
+      color: #e63946;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 14px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      font-size: 0.98em;
+      font-family: 'Lato', Arial, sans-serif;
+      box-shadow: 0 2px 12px #f9c84644;
+      transition: opacity 0.22s;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    .disclaimer {
+      margin: 38px auto 0 auto;
+      text-align: center;
+      color: #888;
+      font-size: 1.08em;
+      max-width: 800px;
+      padding: 0 10px;
+      background: #fffbe7;
+      border-radius: 12px;
+      border: 2px solid #f9c846;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 1em;
+      margin: 38px 0 18px 0;
+      padding-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 700px) {
+      .headline { font-size: 1.5em; }
+      .acts-grid { grid-template-columns: 1fr; }
+      .header { padding: 30px 5px 20px 5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="arena-editorial.png" class="hero-illustration" alt="Editorial Tech Circus Arena">
+    <div class="headline">
+      <span class="emoji">🎟️</span>
+      The Tech Circus
+      <span class="emoji">🤹</span>
+    </div>
+    <div class="subtitle">
+      Where technology and spectacle collide <span style="font-size:1.2em;">✨</span><br>
+      <span style="color:#E63946;">Zero sales pitch.</span>
+    </div>
+  </div>
+  <div class="acts-grid">
+    <div class="act-card" onclick="location.href='trump-legal-circus.html'">
+      <span class="act-emoji">🤡</span>
+      <img src="images/TrumpsLegalyShow.png" class="act-illustration" alt="Legal Circus Editorial Art">
+      <div class="act-title">Trump's Legal Circus <span>🎩</span></div>
+      <div class="act-desc">
+        <span id="snark-legal"></span>
+      </div>
+      <button class="btn" onclick="event.stopPropagation();location.href='trump-legal-circus.html'">Explore <span>🎪</span></button>
+    </div>
+    <div class="act-card" onclick="location.href='failures/failures.html'">
+      <span class="act-emoji">🐘</span>
+      <img src="images/TrumpephantCircus.jpeg" class="act-illustration" alt="Trump Brainfarts Editorial Art">
+      <div class="act-title">Trump's Oopsies <span>💥</span></div>
+      <div class="act-desc">
+      <span id="snark-oopsies"></span>
+      </div>
+      <button class="btn" onclick="event.stopPropagation();location.href='failures/failures.html'">Explore <span>🤹‍♂️</span></button>
+    </div>
+    <div class="act-card" onclick="location.href='ai-illusions.html'">
+      <span class="act-emoji">🤖</span>
+      <img src="images/circus-arena2.png" class="act-illustration" alt="AI Illusions Editorial Art">
+      <div class="act-title">AI Illusions <span>🪄</span></div>
+      <div class="act-desc">
+        <span id="snark-ai"></span>
+      </div>
+      <button class="share-btn" onclick="event.stopPropagation();alert('Share feature coming soon!')">Share <span>🔗</span></button>
+    </div>
+    <!-- Add more act-cards as needed, with more circus emojis! -->
+  </div>
+  <div class="disclaimer" id="disclaimer">
+    Disclaimer: This site is for entertainment and snark—don’t take it to court, take it with a grain of salt.
+  </div>
+  <div class="footer">
+    &copy; 2025 The Tech Circus &mdash; Just me and my AI doing research-y stuff. <span style="font-size:1.2em;">🎠</span>
+  </div>
+  <script>
+    // 30 Handcrafted, natural, highbrow+lowbrow snark lines
+    const snarkLines = [
+      `Where the <span class="tooltip">barristers<span class="tooltiptext">fancy lawyers</span></span> <span class="tooltip">prevaricate<span class="tooltiptext">fib</span></span>. No refunds.`,
+      `Here, the <span class="tooltip">buffoons<span class="tooltiptext">goofballs</span></span> <span class="tooltip">dawdle<span class="tooltiptext">drag their feet</span></span>. Applause not included.`,
+      `Tonight, <span class="tooltip">pomposity<span class="tooltiptext">big egos</span></span> <span class="tooltip">reigns<span class="tooltiptext">rules</span></span>. The tab never closes.`,
+      `In this <span class="tooltip">marquee<span class="tooltiptext">tent</span></span>, <span class="tooltip">subterfuge<span class="tooltiptext">sneaky stuff</span></span> <span class="tooltip">obfuscates<span class="tooltiptext">muddies the waters</span></span>. Nobody prevails.`,
+      `Where <span class="tooltip">remuneration<span class="tooltiptext">money</span></span> <span class="tooltip">inflates<span class="tooltiptext">blows up</span></span>. Bring your own <span class="tooltip">nous<span class="tooltiptext">common sense</span></span>.`,
+      `Here, <span class="tooltip">equity<span class="tooltiptext">fairness</span></span> <span class="tooltip">evaporates<span class="tooltiptext">vanishes</span></span>. No encore.`,
+      `Tonight, <span class="tooltip">nous<span class="tooltiptext">common sense</span></span> <span class="tooltip">departs<span class="tooltiptext">leaves</span></span>. Blink and you’ll miss it.`,
+      `Where the <span class="tooltip">muppets<span class="tooltiptext">fools</span></span> <span class="tooltip">faff about<span class="tooltiptext">waste time</span></span>. It’s always intermission.`,
+      `Here, the <span class="tooltip">tosser<span class="tooltiptext">idiot</span></span> <span class="tooltip">whinges<span class="tooltiptext">complains</span></span>. No exits.`,
+      `Where the <span class="tooltip">loquacious<span class="tooltiptext">talkative</span></span> <span class="tooltip">pontificate<span class="tooltiptext">ramble</span></span>. Applause not included.`,
+      `Tonight, <span class="tooltip">bollocks<span class="tooltiptext">nonsense</span></span> <span class="tooltip">ensues<span class="tooltiptext">happens</span></span>. No refunds.`,
+      `Here, the <span class="tooltip">platitudes<span class="tooltiptext">clichés</span></span> <span class="tooltip">abound<span class="tooltiptext">are everywhere</span></span>. The tab never closes.`,
+      `Where the <span class="tooltip">erudite<span class="tooltiptext">know-it-alls</span></span> <span class="tooltip">pontificate<span class="tooltiptext">ramble</span></span>. Bring your own popcorn.`,
+      `Tonight, <span class="tooltip">grandiloquence<span class="tooltiptext">fancy talk</span></span> <span class="tooltip">prevails<span class="tooltiptext">wins</span></span>. No refunds.`,
+      `Here, <span class="tooltip">perchance<span class="tooltiptext">maybe</span></span> <span class="tooltip">someone listens<span class="tooltiptext">pays attention</span></span>. Applause not included.`,
+      `Where <span class="tooltip">superfluous<span class="tooltiptext">unnecessary</span></span> <span class="tooltip">details<span class="tooltiptext">stuff</span></span> abound. No encore.`,
+      `Tonight, <span class="tooltip">poppycock<span class="tooltiptext">nonsense</span></span> <span class="tooltip">prevails<span class="tooltiptext">wins</span></span>. Nobody prevails.`,
+      `Here, the <span class="tooltip">curtain twitchers<span class="tooltiptext">nosy folks</span></span> <span class="tooltip">observe<span class="tooltiptext">watch</span></span>. No refunds.`,
+      `Where <span class="tooltip">chuffed<span class="tooltiptext">pleased</span></span> <span class="tooltip">turns to<span class="tooltiptext">becomes</span></span> disappointment. The tab never closes.`,
+      `Tonight, <span class="tooltip">faffing<span class="tooltiptext">messing around</span></span> <span class="tooltip">ensues<span class="tooltiptext">happens</span></span>. Bring your own nous.`,
+      `Here, <span class="tooltip">discombobulation<span class="tooltiptext">confusion</span></span> <span class="tooltip">reigns<span class="tooltiptext">rules</span></span>. Applause not included.`,
+      `Where <span class="tooltip">pernicious<span class="tooltiptext">harmful</span></span> <span class="tooltip">rumours<span class="tooltiptext">gossip</span></span> swirl. No refunds.`,
+      `Tonight, <span class="tooltip">gobby<span class="tooltiptext">mouthy</span></span> <span class="tooltip">antics<span class="tooltiptext">behavior</span></span> abound. No encore.`,
+      `Here, <span class="tooltip">barking<span class="tooltiptext">crazy</span></span> <span class="tooltip">up the wrong tree<span class="tooltiptext">confused</span></span>. Nobody prevails.`,
+      `Where <span class="tooltip">knackered<span class="tooltiptext">tired</span></span> <span class="tooltip">ideas<span class="tooltiptext">thoughts</span></span> limp along. The tab never closes.`,
+      `Tonight, <span class="tooltip">smashing<span class="tooltiptext">great</span></span> <span class="tooltip">plans<span class="tooltiptext">schemes</span></span> collapse. Bring your own nous.`,
+      `Here, <span class="tooltip">nary<span class="tooltiptext">not</span></span> a clue <span class="tooltip">is found<span class="tooltiptext">exists</span></span>. Applause not included.`,
+      `Where <span class="tooltip">gobsmacked<span class="tooltiptext">shocked</span></span> <span class="tooltip">faces<span class="tooltiptext">people</span></span> abound. No refunds.`,
+      `Tonight, <span class="tooltip">whinging<span class="tooltiptext">whining</span></span> <span class="tooltip">echoes<span class="tooltiptext">repeats</span></span>. No encore.`,
+      `Here, <span class="tooltip">crackers<span class="tooltiptext">crazy</span></span> <span class="tooltip">antics<span class="tooltiptext">behavior</span></span> reign. Nobody prevails.`
+    ];
+    function generateSnark() {
+      return snarkLines[Math.floor(Math.random() * snarkLines.length)];
+    }
+    document.getElementById('snark-legal').innerHTML = generateSnark();
+    document.getElementById('snark-oopsies').innerHTML = generateSnark();
+    document.getElementById('snark-ai').innerHTML = generateSnark();
+
+    // Disclaimer randomizer
+    const disclaimers = [
+      "Disclaimer: This site is for entertainment—don’t take it to court, take it with a grain of salt.",
+      "Disclaimer: No actual barristers were harmed in the making of this website.",
+      "Disclaimer: All stats are for fun and may be less accurate than a campaign promise.",
+      "Disclaimer: If you’re reading this for legal advice, you’re already in a spot of bother.",
+      "Disclaimer: AI-generated, human-edited, and not to be used for actual life decisions."
+    ];
+    document.getElementById('disclaimer').innerHTML =
+      disclaimers[Math.floor(Math.random() * disclaimers.length)];
+  </script>
+</body>
+</html>

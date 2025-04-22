@@ -1,0 +1,403 @@
+/* FAILURES PAGE SPECIFIC STYLES */
+.failures-page {
+  background: #fff5f5;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+}
+
+header h1 {
+  color: #fff;
+  background-color: #e63946;
+  padding: 1.5rem;
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.intro-section {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.sidebar {
+  background-color: #fff;
+  border-left: 5px solid #e63946;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.sidebar p {
+  margin-bottom: 1rem;
+}
+
+.sidebar strong {
+  color: #333;
+}
+
+.section-title {
+  color: #e63946;
+  border-bottom: 2px solid #e63946;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+
+/* Tables */
+.failures-table,
+.wins-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  background: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+}
+
+.failures-table th,
+.wins-table th {
+  padding: 1rem;
+  text-align: left;
+  color: white;
+  font-weight: bold;
+}
+
+.failures-table th {
+  background: #e63946;
+}
+
+.wins-table th {
+  background: #2a9d8f;
+}
+
+.failures-table td,
+.wins-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.failures-table tr:hover,
+.wins-table tr:hover {
+  background-color: rgba(0,0,0,0.02);
+}
+
+/* Labels */
+.label {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  margin: 0.25rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.label.brain-fart {
+  background: #ffe6e6;
+  color: #cc0000;
+}
+
+.label.resource-drain {
+  background: #e6e6ff;
+  color: #0000cc;
+}
+
+.label.showboating {
+  background: #ffe6ff;
+  color: #cc00cc;
+}
+
+.label.nothingburger {
+  background: #e6e6e6;
+  color: #666666;
+}
+
+.label.u-turn {
+  background: #fff2e6;
+  color: #cc6600;
+}
+
+.label.accidental-hit {
+  background: #e6ffe6;
+  color: #006600;
+}
+
+/* Modal */
+#failures-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  margin: 5% auto;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  background: #f8f9fa;
+}
+
+.modal-close:hover {
+  color: #e63946;
+  background: #e9ecef;
+}
+
+.modal-content h2 {
+  color: #e63946;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Loading and error states */
+tr.loading-row td {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.error-row td {
+  background: #ffe6e6;
+  color: #cc0000;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Buttons */
+.see-more,
+.see-more-win {
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.see-more:hover {
+  background-color: #e9ecef;
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.see-more-win:hover {
+  background-color: #e9ecef;
+  border-color: #2a9d8f;
+  color: #2a9d8f;
+}
+
+/* Full details formatting in modal */
+.full-details {
+  margin: 1.5rem 0;
+  line-height: 1.6;
+}
+
+.full-details p {
+  margin-bottom: 1rem;
+}
+
+.full-details strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Source note at bottom */
+.source-note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .failures-page {
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+  
+  .failures-table,
+  .wins-table {
+    font-size: 0.85rem;
+  }
+  
+  .failures-table th,
+  .wins-table th,
+  .failures-table td,
+  .wins-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+/* Make tables responsive by stacking on mobile */
+@media (max-width: 600px) {
+  .failures-table,
+  .wins-table {
+    display: block;
+    width: 100%;
+  }
+  
+  .failures-table thead,
+  .wins-table thead {
+    display: none;
+  }
+  
+  .failures-table tbody,
+  .wins-table tbody,
+  .failures-table tr,
+  .wins-table tr {
+    display: block;
+    width: 100%;
+  }
+  
+  .failures-table td,
+  .wins-table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: none;
+  }
+  
+  .failures-table td:before,
+  .wins-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.75rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .failures-table tr,
+  .wins-table tr {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+}
+/* Disclaimer section styling */
+.disclaimer-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-top: 3px solid #e63946;
+  border-radius: 0 0 8px 8px;
+}
+
+.disclaimer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.disclaimer-title {
+  color: #e63946;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.disclaimer-text {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.disclaimer-footer {
+  font-style: italic;
+  color: #666;
+  margin-top: 1.5rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+/* Hover reveal elements */
+.hover-reveal {
+  margin: 1rem 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.reveal-trigger {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #2a6496;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+.reveal-trigger:after {
+  content: "›";
+  position: absolute;
+  right: 1rem;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  font-size: 1.4rem;
+  color: #8d8d8d;
+}
+
+.hover-reveal:hover .reveal-trigger:after {
+  transform: rotate(-90deg);
+}
+
+.reveal-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  padding: 0 1rem;
+}
+
+.hover-reveal:hover .reveal-content {
+  height: auto;
+  padding: 0 1rem 1rem;
+  border-top: 1px solid #eee;
+}
+
+.reveal-content p {
+  margin-top: 0.75rem;
+}
+

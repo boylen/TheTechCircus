@@ -1,0 +1,55 @@
+/* style.css - Add at VERY TOP */
+/* PROTECTION AGAINST STYLE LEAKAGE */
+.failures-page *:not(.failures-page) {
+  all: unset !important;
+}
+/* style.css */
+/* Global styles */
+body {
+    background: #FAF3E3;
+    color: #222;
+    font-family: 'Lato', Arial, sans-serif;
+    margin: 0;
+}
+/* Add all styles from styles.css here */
+body {
+    background: #FAF3E3;
+    color: #222;
+    font-family: 'Lato', Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 60px 0 30px 0;
+    background: #fff;
+    border-bottom: 4px solid #222;
+  }
+  
+  .fail-section {
+    background: #fff;
+    border: 2px solid #222;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px #0001;
+    padding: 24px;
+    margin: 40px 10vw;
+  }
+  /* style.css - Add only these changes */
+.failures-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.failures-page th, 
+.failures-page td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #e63946;
+}
+
+.failures-page th {
+  background: #e63946;
+  color: white;
+  font-family: 'Abril Fatface', cursive;
+}

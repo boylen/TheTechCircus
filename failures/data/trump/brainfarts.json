@@ -1,0 +1,62 @@
+[
+  {
+    "id": "right-to-try",
+    "title": "Right-to-Try Act",
+    "category": "Accidental Hit",
+    "date": "2025-04-18",
+    "labels": ["Accidental Hit"],
+    "description": "Allowed terminally ill patients access to experimental treatments not yet fully approved by the FDA.",
+    "positiveImpact": "Expanded patient options in rare cases",
+    "source": "https://www.fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try",
+    "fullDetails": "Despite skepticism from many medical experts, this legislation successfully provided some patients with access to experimental treatments.",
+    "winButton": "Wait, That Worked?"
+  },
+  {
+    "id": "first-step-act",
+    "title": "First Step Act",
+    "category": "Accidental Hit",
+    "date": "2025-03-10",
+    "labels": ["Accidental Hit"],
+    "description": "Bipartisan criminal justice reform that reduced some mandatory minimums and expanded rehabilitation programs.",
+    "positiveImpact": "Thousands released, recidivism reduced",
+    "source": "https://example.com/first-step-act",
+    "fullDetails": "Details about the First Step Act's positive impacts.",
+    "winButton": "Even a Blind Squirrel..."
+  },
+  {
+    "id": "va-accountability",
+    "title": "VA Accountability Act",
+    "category": "Accidental Hit",
+    "date": "2025-02-05",
+    "labels": ["Accidental Hit"],
+    "description": "Made it easier to fire underperforming VA employees, aiming to improve care for veterans.",
+    "positiveImpact": "Some improvement in VA responsiveness",
+    "source": "https://example.com/va-accountability",
+    "fullDetails": "Details about the VA Accountability Act.",
+    "winButton": "Broken Clock Moment"
+  },
+  {
+    "id": "usmca-trade",
+    "title": "USMCA Trade Deal",
+    "category": "Accidental Hit",
+    "date": "2025-01-20",
+    "labels": ["Accidental Hit"],
+    "description": "Replaced NAFTA with a new trade agreement, updating labor and environmental standards.",
+    "positiveImpact": "Modernized trade with Canada/Mexico",
+    "source": "https://example.com/usmca-deal",
+    "fullDetails": "Details about the USMCA trade deal.",
+    "winButton": "Who Knew?"
+  },
+  {
+    "id": "right-to-work",
+    "title": "Right-to-Work Nominations",
+    "category": "Accidental Hit",
+    "date": "2024-12-15",
+    "labels": ["Accidental Hit"],
+    "description": "Some judicial and agency appointments have advanced bipartisan causes (e.g., criminal justice reform, antitrust).",
+    "positiveImpact": "Occasional bipartisan praise",
+    "source": "https://example.com/right-to-work",
+    "fullDetails": "Details about the right-to-work nominations.",
+    "winButton": "Oops, That Helped"
+  }
+]
