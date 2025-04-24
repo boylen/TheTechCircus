@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Illusions | The Tech Circus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Circus fonts and style -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fffbe7 0%, #ffe3e3 100%);
+      font-family: 'Lato', Arial, sans-serif;
+      color: #222;
+    }
+    .header {
+      text-align: center;
+      padding: 48px 10px 32px 10px;
+      background: linear-gradient(120deg, #fffbe7 70%, #ffe3e3 100%);
+      border-bottom: 7px solid #f9c846;
+      position: relative;
+    }
+    .header:before, .header:after {
+      content: "🎪";
+      font-size: 2.4em;
+      position: absolute;
+      top: 18px;
+    }
+    .header:before { left: 22px; }
+    .header:after { right: 22px; }
+    .headline {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 2.3em;
+      color: #e63946;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #f9c846, 4px 4px 0 #fffbe7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .subtitle {
+      font-size: 1.15em;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+    .gallery-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      margin: 40px auto 30px auto;
+      gap: 44px;
+      padding: 0 20px;
+    }
+    .artwork {
+      background: linear-gradient(120deg, #fffbe7 80%, #ffe3e3 100%);
+      border-radius: 18px;
+      box-shadow: 0 6px 28px rgba(234, 179, 8, 0.13);
+      border: 3px solid #f9c846;
+      padding: 32px 24px 24px 24px;
+      text-align: center;
+      width: 100%;
+      max-width: 540px;
+      position: relative;
+    }
+    .art-img {
+      max-width: 88%;
+      max-height: 260px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 2px solid #f9c846;
+      box-shadow: 0 2px 8px #f9c84633;
+      background: #fff;
+    }
+    .art-title {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 1.23em;
+      color: #e63946;
+      margin-bottom: 7px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .art-caption {
+      font-size: 1.09em;
+      color: #3a3a3a;
+      font-style: italic;
+      margin-bottom: 10px;
+      min-height: 48px;
+    }
+    .art-snark {
+      color: #e63946;
+      font-size: 1em;
+      margin-bottom: 0;
+      font-style: italic;
+      min-height: 36px;
+    }
+    /* Tooltip styling (matches index.html) */
+    .tooltip {
+      border-bottom: 2px dashed #e63946;
+      cursor: pointer;
+      position: relative;
+      color: #e63946;
+      font-weight: 500;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+    }
+    .tooltip:hover {
+      color: #f9c846;
+    }
+    .tooltiptext {
+      visibility: hidden;
+      min-width: 120px;
+      background-color: #fffbe7;
+      color: #e63946;
+      text-align: center;
+      border-radius: 8px;
+      padding: 7px 14px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      font-size: 0.98em;
+      font-family: 'Lato', Arial, sans-serif;
+      box-shadow: 0 2px 12px #f9c84644;
+      transition: opacity 0.22s;
+      pointer-events: none;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    .disclaimer {
+      margin: 38px auto 0 auto;
+      text-align: center;
+      color: #888;
+      font-size: 1.08em;
+      max-width: 800px;
+      padding: 0 10px;
+      background: #fffbe7;
+      border-radius: 12px;
+      border: 2px solid #f9c846;
+      display: block;
+    }
+    .footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 1em;
+      margin: 38px 0 18px 0;
+      padding-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 700px) {
+      .headline { font-size: 1.2em; }
+      .gallery-stack { padding: 0 7px; }
+      .header { padding: 30px 5px 20px 5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="headline">
+      <span class="emoji">🤖</span>
+      AI Illusions: Gallery of Faffery
+      <span class="emoji">🎨</span>
+    </div>
+    <div class="subtitle">
+      Where artificial intelligence meets artistic nonsense, and the only thing deeper than the learning is the sarcasm.
+    </div>
+  </div>
+  <div class="gallery-stack">
+    <div class="artwork">
+      <img src="images/TrumpsLegalyShow.jpg" class="art-img" alt="Trump's Legaly Show">
+      <div class="art-title">Trump’s Legaly Show</div>
+      <div class="art-caption" id="caption-legal"></div>
+      <div class="art-snark" id="snark-legal"></div>
+    </div>
+    <div class="artwork">
+      <img src="images/TrumpephantCircus.jpg" class="art-img" alt="Trumpephant Circus">
+      <div class="art-title">Trumpephant Circus</div>
+      <div class="art-caption" id="caption-elephant"></div>
+      <div class="art-snark" id="snark-elephant"></div>
+    </div>
+    <div class="artwork">
+      <img src="images/circus-arena2.jpg" class="art-img" alt="Circus Arena">
+      <div class="art-title">Circus Arena</div>
+      <div class="art-caption" id="caption-arena"></div>
+      <div class="art-snark" id="snark-arena"></div>
+    </div>
+  </div>
+  <div class="disclaimer" id="disclaimer">
+    Disclaimer: All images above are AI-generated faffery. Any resemblance to actual events, persons, or legal proceedings is purely coincidental and, frankly, a bit worrying.
+  </div>
+  <div class="footer">
+    &copy; 2025 The Tech Circus &mdash; Where the pixels are artificial and the snark is all too real. 🎠
+  </div>
+  <script>
+    // Arrays of captions and snark for each image, with tooltip rollovers
+    const captionsLegal = [
+      `A paperwork avalanche, a thumbs-up, and a courtroom full of characters—because nothing says "<span class="tooltip">justice<span class="tooltiptext">theoretical fairness</span></span>" like a bird on your barnet and a spelling mistake on your banner.`,
+      `Where the only thing more questionable than the legal strategy is the <span class="tooltip">proofreading<span class="tooltiptext">quality control</span></span>.`,
+      `A masterclass in legal theatre: confusion, paperwork, and a hairstyle that defies both gravity and <span class="tooltip">good sense<span class="tooltiptext">rationality</span></span>.`
+    ];
+    const snarksLegal = [
+      `The only thing more tangled than the paperwork is the <span class="tooltip">plot<span class="tooltiptext">storyline</span></span>.`,
+      `At least the bird seems confident.`,
+      `If you think this is chaotic, you should see the <span class="tooltip">appeals process<span class="tooltiptext">legal aftermath</span></span>.`
+    ];
+
+    const captionsElephant = [
+      `Half showman, half elephant, all spectacle. Money and facts fly through the air with equal disregard—just another day in the greatest show of <span class="tooltip">self-promotion<span class="tooltiptext">egomania</span></span> on earth.`,
+      `The only act where the <span class="tooltip">elephant in the room<span class="tooltiptext">obvious problem</span></span> is also the ringmaster.`,
+      `A rare glimpse of the Trumpophant: part politician, part pachyderm, all <span class="tooltip">pandemonium<span class="tooltiptext">utter chaos</span></span>.`
+    ];
+    const snarksElephant = [
+      `Please keep your peanuts and your subpoenas inside the ring at all times.`,
+      `If you squint, you can almost see the <span class="tooltip">dignity<span class="tooltiptext">self-respect</span></span>. Almost.`,
+      `The only thing thicker than the skin is the <span class="tooltip">irony<span class="tooltiptext">unintentional humour</span></span>.`
+    ];
+
+    const captionsArena = [
+      `The lights are bright, the stage is set, and the audience is bracing for a spectacle. And yet, the ring remains empty—eerily reminiscent of <span class="tooltip">Congress<span class="tooltiptext">the world's most expensive debating club</span></span> when actual work is required.`,
+      `A grand arena, meticulously prepared, awaiting a performance that may never come. Much like <span class="tooltip">legislative productivity<span class="tooltiptext">getting anything done</span></span>.`,
+      `The anticipation is palpable, the action is... conspicuously absent. Just like a Monday on <span class="tooltip">Capitol Hill<span class="tooltiptext">Parliament, but with more lobbyists</span></span>.`
+    ];
+    const snarksArena = [
+      `At least in the circus, the performers eventually show up. In Congress, the only thing that arrives reliably is the <span class="tooltip">confusion<span class="tooltiptext">state of affairs</span></span>.`,
+      `Spot the difference: one is a circus, the other is Congress. Good luck.`,
+      `The only thing more vacant than the stage is the <span class="tooltip">legislative agenda<span class="tooltiptext">to-do list</span></span>.`
+    ];
+
+    function pick(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+    document.getElementById('caption-legal').innerHTML = pick(captionsLegal);
+    document.getElementById('snark-legal').innerHTML = pick(snarksLegal);
+    document.getElementById('caption-elephant').innerHTML = pick(captionsElephant);
+    document.getElementById('snark-elephant').innerHTML = pick(snarksElephant);
+    document.getElementById('caption-arena').innerHTML = pick(captionsArena);
+    document.getElementById('snark-arena').innerHTML = pick(snarksArena);
+
+    // Disclaimer randomizer
+    const disclaimers = [
+      "Disclaimer: All images above are AI-generated faffery. Any resemblance to actual events, persons, or legal proceedings is purely coincidental and, frankly, a bit worrying.",
+      "Disclaimer: This gallery contains more satire than a British tabloid.",
+      "Disclaimer: No actual elephants or politicians were harmed in the making of this nonsense.",
+      "Disclaimer: For entertainment only—consult your therapist before taking any of this seriously."
+    ];
+    document.getElementById('disclaimer').textContent = pick(disclaimers);
+  </script>
+</body>
+</html>
