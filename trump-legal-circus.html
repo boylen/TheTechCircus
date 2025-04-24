@@ -40,8 +40,11 @@
 
   <!-- Remove any lines like |Case|Category|...| -->
 
-  <table id="main-docket-table">
-    <caption>Main Docket: Trump Legal Proceedings aka "The Strategic Abuse of Judicial Process"'</caption>
+    <h2>
+      Main Docket: Trump Legal Proceedings —
+      <span id="main-docket-subtitle" class="subtitle"></span>
+    </h2>    
+    <table id="main-docket-table">
     <thead>
       <tr>
         <th>Case</th>
@@ -57,8 +60,11 @@
   </table>
   <button class="load-more" id="loadMoreMain">Load More Legal Drama 🎪</button>
 
-  <table id="sideshow-docket-table">
-    <caption>The Sideshow Docket: Trump-Adjacent Legal Proceedings</caption>
+    <h2>
+      Sideshow Docket: Trump-Adjacent Legal Proceedings —
+      <span id="sideshow-docket-subtitle" class="subtitle"></span>
+    </h2>   
+    <table>
     <thead>
       <tr>
         <th>Case</th>
@@ -241,6 +247,41 @@
     // Step 3: Run the function when the page loads
     showRandomSnark();
     </script>
-    
+    <script>
+      const mainDocketSubtitles = [
+        "Where Justice Goes to Chase Its Own Tail",
+        "The Never-Ending Season Finale",
+        "Now Streaming: Law & Disorder",
+        "A Masterclass in Legal Gymnastics",
+        "Because the Rule of Law Needed a Plot Twist",
+        "The Original Reality Courtroom",
+        "Litigation, Lamentation, and Libel—Oh My!",
+        "The Strategic Abuse of Judicial Process",
+        "The Only Courtroom with a Popcorn Machine",
+        "All Rise for the Drama"
+      ];
+      
+      const sideshowDocketSubtitles = [
+        "The Extended Universe of Legal Nonsense",
+        "A Parade of Enablers, Grifters, and Legal Hang-Gliders",
+        "Where the Associates Juggle Subpoenas",
+        "The Supporting Clowns Take the Stage",
+        "The Spin-Off Nobody Asked For",
+        "Legal Limbo: How Low Can They Go?",
+        "The Legal Equivalent of a Clown Car",
+        "The Associates’ Hour of Questionable Glory",
+        "Because Every Circus Needs a Sideshow",
+        "The Perpetual Motion Machine of Excuses"
+      ];
+      
+      function pick(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+      </script>
+      <script>
+        document.getElementById('main-docket-subtitle').textContent = `"${pick(mainDocketSubtitles)}"`;
+        document.getElementById('sideshow-docket-subtitle').textContent = `"${pick(sideshowDocketSubtitles)}"`;
+        </script>
+        
 </body>
 </html>
