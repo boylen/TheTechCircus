@@ -2,49 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trump Legal Circus</title>
+  <title>Trump Legal Circus | The Tech Circus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* ... your CSS from before ... */
-    body { font-family: Lato, Arial, sans-serif; background: #fffbe7; color: #222; margin: 0;}
-    .headline { font-family: 'Abril Fatface', cursive; color: #e63946; font-size: 2.3em; text-align: center; margin: 32px 0 8px;}
-    .subtitle { color: #b45f06; font-style: italic; text-align: center; margin-bottom: 24px;}
-    .stats-bar { display: flex; gap: 32px; align-items: center; margin: 20px auto; font-size: 1.18em; max-width: 96%; background: #f7fafc; border-radius: 12px; padding: 15px;}
-    .scoreboard { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; max-width: 1100px; margin: 40px auto 24px auto; padding: 0 20px;}
-    .scorecard { background: #f7fafc; border-radius: 15px; padding: 24px 30px; box-shadow: 0 4px 12px rgba(44,62,80,0.07); text-align: center; min-width: 220px; flex: 1 1 220px;}
-    .scorecard h3 { font-size: 1.18em; margin-bottom: 11px; color: #2a4365;}
-    .scorecard p { font-size: 1.08em; color: #4a5568; line-height: 1.5; margin: 0;}
-    .current-date { text-align: right; color: #666; margin: 0 3vw 20px; font-size: 1em;}
-    table { width: 96%; margin: 20px auto; border-collapse: separate; border-spacing: 0; background: #fffbe7; border-radius: 14px; box-shadow: 0 8px 32px rgba(44, 62, 80, 0.10);}
-    caption { caption-side: top; font-family: 'Abril Fatface', cursive; font-size: 1.3em; color: #e63946; padding: 18px 0 0 0;}
-    th, td { padding: 14px 16px; border-bottom: 1px solid #f9c846; text-align: left;}
-    th { background: #e63946; color: #fff; font-family: 'Abril Fatface', cursive; font-size: 1.1em;}
-    .status-badge { display: inline-block; padding: 6px 14px; border-radius: 999px; font-weight: 700; background: #457b9d; color: #fff;}
-    .details-btn { background: #2a4365; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: background 0.3s;}
-    .details-btn:hover { background: #e63946;}
-    .details-content { display: none; background: #ebf8ff; padding: 16px; border-radius: 8px; margin-top: 8px; position: absolute; z-index: 2; min-width: 250px; max-width: 350px; box-shadow: 0 2px 12px #f9c84644; color: #2c5282;}
-    tr.details-row td { background: #ebf8ff !important; }
-    td.relative { position: relative;}
-    .disclaimer { margin: 38px auto 0 auto; text-align: center; color: #888; font-size: 1.08em; max-width: 800px; padding: 0 10px; background: #fffbe7; border-radius: 12px; border: 2px solid #f9c846; display: block;}
-    .footer { text-align: center; color: #aaa; font-size: 1em; margin: 38px 0 18px 0; padding-bottom: 12px; letter-spacing: 0.03em;}
-    .load-more { background: #e63946; color: white; padding: 12px 24px; border-radius: 25px; margin: 20px auto; display: block; transition: background 0.3s; border: none; font-size: 1em;}
-    .load-more:hover { background: #b92d3a;}
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fffbe7 0%, #ffe3e3 100%);
+      font-family: 'Lato', Arial, sans-serif;
+      color: #222;
+    }
+    .header {
+      text-align: center;
+      padding: 40px 10px 20px 10px;
+      background: linear-gradient(120deg, #fffbe7 70%, #ffe3e3 100%);
+      border-bottom: 7px solid #f9c846;
+    }
+    .headline {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 2.2em;
+      color: #e63946;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #f9c846, 4px 4px 0 #fffbe7;
+    }
+    .subtitle {
+      font-size: 1.15em;
+      color: #495057;
+      margin-bottom: 10px;
+      font-style: italic;
+      display: block;
+    }
+    h2 {
+      font-family: 'Abril Fatface', cursive;
+      color: #e63946;
+      margin-top: 2.5em;
+      margin-bottom: 0.2em;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    .docket-subtitle {
+      font-size: 1.07em;
+      color: #457b9d;
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 1.2em;
+      display: block;
+    }
+    table {
+      width: 95%;
+      margin: 0 auto 2em auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #f9c84644;
+      border: 2px solid #f9c846;
+      font-size: 1.07em;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.8em 1em;
+      border-bottom: 1px solid #fae7b7;
+      text-align: left;
+    }
+    th {
+      background: #ffe3e3;
+      color: #e63946;
+      font-family: 'Abril Fatface', cursive;
+      font-size: 1.1em;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .summary-row {
+      background: #fffbe7;
+      font-weight: bold;
+    }
+    .footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 1em;
+      margin: 38px 0 18px 0;
+      padding-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+    .conclusion {
+      margin: 2em auto 1em auto;
+      max-width: 700px;
+      text-align: center;
+      font-size: 1.18em;
+      color: #e63946;
+      font-family: 'Lato',Arial,sans-serif;
+      background: #fffbe7;
+      border-radius: 12px;
+      border: 2px solid #f9c846;
+      padding: 1.2em 1em;
+    }
+    .details-btn {
+      background: #ffe3e3;
+      color: #e63946;
+      border: 1px solid #e63946;
+      border-radius: 5px;
+      padding: 0.4em 1em;
+      cursor: pointer;
+      font-size: 1em;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .details-btn:hover {
+      background: #f9c846;
+      color: #fff;
+    }
+    .details-row td {
+      background: #f9f9f9;
+      color: #222;
+      font-size: 0.98em;
+      border-top: 1px solid #f9c846;
+      border-bottom: 2px solid #f9c846;
+      padding-top: 1.3em;
+      padding-bottom: 1.3em;
+    }
+    .load-more {
+      display: block;
+      margin: 0 auto 2em auto;
+      background: #f9c846;
+      color: #e63946;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7em 2em;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .load-more:hover {
+      background: #e63946;
+      color: #fff;
+    }
+    @media (max-width: 700px) {
+      .headline { font-size: 1.2em; }
+      table { font-size: 0.95em; }
+      .header { padding: 30px 5px 20px 5px; }
+    }
   </style>
 </head>
 <body>
-  <div class="headline">Trump Legal Circus</div>
-  <div class="subtitle"><span id="snark-legal"></span></div>
-  
+  <div class="header">
+    <div class="headline">Trump Legal Circus</div>
+    <span class="subtitle" id="page-subtitle"></span>
+  </div>
 
-  <!-- Remove any lines like |Case|Category|...| -->
-
-    <h2>
-      Main Docket: Trump Legal Proceedings —
-      <span id="main-docket-subtitle" class="subtitle"></span>
-    </h2>    
-    <table id="main-docket-table">
+  <!-- Main Docket Section -->
+  <h2>
+    Main Docket: Trump Legal Proceedings —
+    <span id="main-docket-subtitle" class="docket-subtitle"></span>
+  </h2>
+  <table id="main-docket-table">
     <thead>
       <tr>
         <th>Case</th>
@@ -56,15 +168,18 @@
         <th>Details</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      <!-- Populated by JS -->
+    </tbody>
   </table>
   <button class="load-more" id="loadMoreMain">Load More Legal Drama 🎪</button>
 
-    <h2>
-      Sideshow Docket: Trump-Adjacent Legal Proceedings —
-      <span id="sideshow-docket-subtitle" class="subtitle"></span>
-    </h2>   
-    <table>
+  <!-- Sideshow Docket Section -->
+  <h2>
+    Sideshow Docket: Trump-Adjacent Legal Proceedings —
+    <span id="sideshow-docket-subtitle" class="docket-subtitle"></span>
+  </h2>
+  <table id="sideshow-docket-table">
     <thead>
       <tr>
         <th>Case</th>
@@ -76,12 +191,17 @@
         <th>Details</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      <!-- Populated by JS -->
+    </tbody>
   </table>
   <button class="load-more" id="loadMoreSideshow">Load More Sideshow Drama 🎪</button>
 
+  <!-- Pre-Presidency Table with Static Summary -->
+  <h2>
+    Lawsuit Category Breakdown (1973–2016)
+  </h2>
   <table>
-    <caption>Trump’s Legal Stats (1973–2016): The Pre-Presidency “Litigation Olympics”</caption>
     <thead>
       <tr>
         <th>Lawsuit Category</th>
@@ -92,73 +212,139 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Contract/Business</td><td>1,900</td><td>~92%</td><td>Corporations, Vendors</td><td>Winning by attrition, one invoice at a time.</td></tr>
-      <tr><td>Real Estate/Property</td><td>700</td><td>~90%</td><td>Partners, Cities</td><td>Zoning law: Trump’s favorite board game.</td></tr>
-      <tr><td>Tax Disputes</td><td>100</td><td>~80%</td><td>IRS, States</td><td>Tax code: read it, bend it, litigate it.</td></tr>
-      <tr><td>Employment/Labor</td><td>200</td><td>~60%</td><td>Employees, Unions</td><td>Winning the battle, losing the workforce.</td></tr>
-      <tr><td>Defamation/Personal</td><td>100</td><td>~50%</td><td>Individuals, Media</td><td>Defamation or just a difference of opinion?</td></tr>
-      <tr><td>Casino/Patron</td><td>100</td><td>~70%</td><td>Gamblers, Customers</td><td>Lost at blackjack? Try your luck in court.</td></tr>
-      <tr><td>Little Guy Suits</td><td>100</td><td>~60%</td><td>Contractors, Tenants</td><td>The only thing smaller than the payout is the patience.</td></tr>
-      <tr><td>Government/Regulatory</td><td>100</td><td>~50%</td><td>City/State/Federal</td><td>Permits? More like permits-to-sue.</td></tr>
-      <tr><td>Sexual Harassment/Assault</td><td>20</td><td>&lt;50%</td><td>Individuals</td><td>Deny, delay, settle, NDA.</td></tr>
+      <tr>
+        <td>Contract/Business</td>
+        <td>1,900</td>
+        <td>~92%</td>
+        <td>Corporations, Vendors</td>
+        <td>Winning by attrition, one invoice at a time.</td>
+      </tr>
+      <tr>
+        <td>Real Estate/Property</td>
+        <td>700</td>
+        <td>~90%</td>
+        <td>Partners, Cities</td>
+        <td>Zoning law: Trump’s favorite board game.</td>
+      </tr>
+      <tr>
+        <td>Tax Disputes</td>
+        <td>100</td>
+        <td>~80%</td>
+        <td>IRS, States</td>
+        <td>Tax code: read it, bend it, litigate it.</td>
+      </tr>
+      <tr>
+        <td>Employment/Labor</td>
+        <td>200</td>
+        <td>~60%</td>
+        <td>Employees, Unions</td>
+        <td>Winning the battle, losing the workforce.</td>
+      </tr>
+      <tr>
+        <td>Defamation/Personal</td>
+        <td>100</td>
+        <td>~50%</td>
+        <td>Individuals, Media</td>
+        <td>Defamation or just a difference of opinion?</td>
+      </tr>
+      <tr>
+        <td>Casino/Patron</td>
+        <td>100</td>
+        <td>~70%</td>
+        <td>Gamblers, Customers</td>
+        <td>Lost at blackjack? Try your luck in court.</td>
+      </tr>
+      <tr>
+        <td>Little Guy Suits</td>
+        <td>100</td>
+        <td>~60%</td>
+        <td>Contractors, Tenants</td>
+        <td>The only thing smaller than the payout is the patience.</td>
+      </tr>
+      <tr>
+        <td>Government/Regulatory</td>
+        <td>100</td>
+        <td>~50%</td>
+        <td>City/State/Federal</td>
+        <td>Permits? More like permits-to-sue.</td>
+      </tr>
+      <tr>
+        <td>Sexual Harassment/Assault</td>
+        <td>20</td>
+        <td>&lt;50%</td>
+        <td>Individuals</td>
+        <td>Deny, delay, settle, NDA.</td>
+      </tr>
+      <tr class="summary-row">
+        <td style="text-align:right;">Total (1973–2016):</td>
+        <td>3,320</td>
+        <td colspan="3"></td>
+      </tr>
     </tbody>
   </table>
 
-  <div class="stats-bar">
-    <div><b>Total Legal Actions:</b> 3,320</div>
-    <div><b>Win$</b> $2.3B</div>
-    <div><b>Loss$</b> $86.8M</div>
+  <!-- Conclusion Section -->
+  <div class="conclusion">
+    <strong>Conclusion:</strong> No wonder he likes to sue so much—he's made more money suing than any of his businesses ever did. For Donald Trump, the courtroom has always been the real profit center.
   </div>
-  <div class="scoreboard" id="scoreboard"></div>
-  <div class="current-date" id="current-date"></div>
 
-  <div class="disclaimer" id="disclaimer"></div>
   <div class="footer">
-    &copy; 2025 The Tech Circus — Just me and my AI doing research-y stuff. 🎠
+    &copy; 2025 The Tech Circus — Where subpoenas and snark go hand in hand. 🎪
   </div>
+
   <script>
-    // Scoreboard metrics
-    document.getElementById('scoreboard').innerHTML = `
-      <div class="scorecard"><h3>💰 Taxpayer Burden</h3><p>Total Known Cost: $30.6M</p><p>Spent at Trump Properties: $2.5M</p></div>
-      <div class="scorecard"><h3>🎪 Main Docket</h3><p>Criminal Charges: 91</p><p>Indictments: 4</p><p>Civil Suits: 30+</p><p>Financial Exposure: $500M+</p></div>
-      <div class="scorecard"><h3>🎭 Sideshow Docket</h3><p>Major Cases: 5+</p><p>Settlements / Costs: $800M+</p><p>Indicted / Sanctioned: 15+</p><p>PAC Legal Spending: $80M+</p></div>
-      <div class="scorecard"><h3>⚖️ Other Key Metrics</h3><p>Active Criminal Cases: 4</p><p>Recent Sanctions: $938K</p><p>Sanction Details: Clinton/DNC (Mar 2022 – Feb 2024)</p></div>
-    `;
-    // Current date/time
-    function updateDate() {
-      const now = new Date();
-      document.getElementById('current-date').textContent =
-        'Current date: ' + now.toLocaleString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit', hour12:true});
+    // Witty subtitle arrays
+    const mainDocketSubtitles = [
+      "Where Justice Goes to Chase Its Own Tail",
+      "The Never-Ending Season Finale",
+      "Now Streaming: Law & Disorder",
+      "A Masterclass in Legal Gymnastics",
+      "Because the Rule of Law Needed a Plot Twist",
+      "The Original Reality Courtroom",
+      "Litigation, Lamentation, and Libel—Oh My!",
+      "The Strategic Abuse of Judicial Process",
+      "The Only Courtroom with a Popcorn Machine",
+      "All Rise for the Drama"
+    ];
+    const sideshowDocketSubtitles = [
+      "The Extended Universe of Legal Nonsense",
+      "A Parade of Enablers, Grifters, and Legal Hang-Gliders",
+      "Where the Associates Juggle Subpoenas",
+      "The Supporting Clowns Take the Stage",
+      "The Spin-Off Nobody Asked For",
+      "Legal Limbo: How Low Can They Go?",
+      "The Legal Equivalent of a Clown Car",
+      "The Associates’ Hour of Questionable Glory",
+      "Because Every Circus Needs a Sideshow",
+      "The Perpetual Motion Machine of Excuses"
+    ];
+    const pageSnark = [
+      "A circus of litigation, legislation, and lamentation.",
+      "The only place where billable hours outnumber the popcorn.",
+      "The greatest show on earth—and in the courts.",
+      "Justice, but with more sequins.",
+      "Where the only thing longer than the trial is the intermission."
+    ];
+    function pick(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
     }
-    updateDate();
+    document.getElementById('main-docket-subtitle').textContent = `"${pick(mainDocketSubtitles)}"`;
+    document.getElementById('sideshow-docket-subtitle').textContent = `"${pick(sideshowDocketSubtitles)}"`;
+    document.getElementById('page-subtitle').textContent = pick(pageSnark);
 
-    // Details button functionality (works for both tables)
-    function toggleDetailsRow(btn) {
-      // Remove any other open details rows
-      document.querySelectorAll('.details-row').forEach(row => row.remove());
-      const tr = btn.closest('tr');
-      let next = tr.nextElementSibling;
-      if (next && next.classList.contains('details-row')) {
-        next.remove();
-        return;
-      }
-      const details = btn.getAttribute('data-details') || 'No details available.';
-      const detailsRow = document.createElement('tr');
-      detailsRow.className = 'details-row';
-      detailsRow.innerHTML = `<td colspan="${tr.children.length}"><div class="details-content" style="display:block;">${details}</div></td>`;
-      tr.parentNode.insertBefore(detailsRow, tr.nextSibling);
-    }
+    // --- Data and Table Rendering Logic ---
+    let mainData = [];
+    let sideshowData = [];
+    let mainPage = 1, sideshowPage = 1;
+    const pageSize = 5; // Number of rows to show per load
 
-    // Pagination state
-    let mainPage = 1, sideshowPage = 1, pageSize = 5;
-    let mainData = [], sideshowData = [];
 
-    // Load dynamic tables from JSON
+    // Load data from JSON (adjust path if needed)
     fetch('trump-legal-cases.json')
       .then(r => r.json())
       .then(data => {
-        mainData = data.main_docket;
-        sideshowData = data.sideshow_docket;
+        mainData = data.main_docket || [];
+        sideshowData = data.sideshow_docket || [];
         renderMainTable();
         renderSideshowTable();
       });
@@ -166,7 +352,10 @@
     function renderMainTable() {
       const tbody = document.querySelector('#main-docket-table tbody');
       tbody.innerHTML = '';
+      let totalCost = 0, totalHours = 0;
       mainData.slice(0, mainPage * pageSize).forEach(row => {
+        if (typeof row.cost === 'number') totalCost += row.cost;
+        if (typeof row.workhours === 'number') totalHours += row.workhours;
         tbody.innerHTML += `
           <tr>
             <td>${row.title}</td>
@@ -176,18 +365,32 @@
             <td>${typeof row.workhours === 'number' ? row.workhours.toLocaleString() + ' hrs' : row.workhours}</td>
             <td>${row.timeframe}</td>
             <td>
-              <button class="details-btn" onclick="toggleDetailsRow(this)" data-details="${row.description.replace(/"/g, '&quot;')}${row.source ? `<br><a href='${row.source}' target='_blank'>Source 🔗</a>` : ''}">Details</button>
+              <button class="details-btn" onclick="toggleDetailsRow(this)" 
+              data-details="${row.description.replace(/"/g, '&quot;')}${row.source ? `<br><a href='${row.source}' target='_blank'>Source 🔗</a>` : ''}"
+                Details
+              </button>
             </td>
-          </tr>
-        `;
+          </tr>`;
       });
+      // Add summary row
+      tbody.innerHTML += `
+        <tr class="summary-row">
+          <td colspan="3" style="text-align: right;">Current Page Total:</td>
+          <td>$${totalCost.toLocaleString()}</td>
+          <td>${totalHours.toLocaleString()} hrs</td>
+          <td colspan="2"></td>
+        </tr>`;
       document.getElementById('loadMoreMain').style.display =
         (mainPage * pageSize < mainData.length) ? 'block' : 'none';
     }
+
     function renderSideshowTable() {
       const tbody = document.querySelector('#sideshow-docket-table tbody');
       tbody.innerHTML = '';
+      let totalCost = 0, totalHours = 0;
       sideshowData.slice(0, sideshowPage * pageSize).forEach(row => {
+        if (typeof row.cost === 'number') totalCost += row.cost;
+        if (typeof row.workhours === 'number') totalHours += row.workhours;
         tbody.innerHTML += `
           <tr>
             <td>${row.title}</td>
@@ -197,14 +400,70 @@
             <td>${typeof row.workhours === 'number' ? row.workhours.toLocaleString() + ' hrs' : row.workhours}</td>
             <td>${row.timeframe}</td>
             <td>
-              <button class="details-btn" onclick="toggleDetailsRow(this)" data-details="${row.description.replace(/"/g, '&quot;')}${row.source ? `<br><a href='${row.source}' target='_blank'>Source 🔗</a>` : ''}">Details</button>
+              <button class="details-btn" onclick="toggleDetailsRow(this)" 
+              data-details="${row.description.replace(/"/g, '&quot;')}${row.source ? `<br><a href='${row.source}' target='_blank'>Source 🔗</a>` : ''}"
+                Details
+              </button>
             </td>
-          </tr>
-        `;
+          </tr>`;
       });
+      // Add summary row
+      tbody.innerHTML += `
+        <tr class="summary-row">
+          <td colspan="3" style="text-align: right;">Current Page Total:</td>
+          <td>$${totalCost.toLocaleString()}</td>
+          <td>${totalHours.toLocaleString()} hrs</td>
+          <td colspan="2"></td>
+        </tr>`;
       document.getElementById('loadMoreSideshow').style.display =
         (sideshowPage * pageSize < sideshowData.length) ? 'block' : 'none';
     }
+    // British wit for ongoing/blank details
+      const ongoingWit = [
+        "Still rumbling on, like Jarndyce v Jarndyce—future generations may inherit the paperwork.",
+        "Ongoing: The legal equivalent of waiting for Godot, but with more billable hours.",
+        "Case continues: The only thing moving slower than this is a British queue.",
+        "In progress: As interminable as a Dickensian lawsuit.",
+        "Pending: More twists than a season of 'Broadchurch', fewer resolutions.",
+        "Ongoing: The court system’s answer to 'Are we there yet?' is always 'No.'",
+        "As unresolved as Brexit, but with better wigs.",
+        "Still in session: The paperwork alone could fill the British Library.",
+        "Ongoing: Like a cricket match, it may never end, but the tea breaks are excellent.",
+        "No verdict yet—check back after the next royal wedding."
+];
+
+function getDetailsText(row) {
+  let desc = row.description && row.description.trim();
+  if ((!desc || desc === "" || desc === "null") &&
+      row.status && /ongoing|present|pending|in progress|open/i.test(row.status)) {
+    return ongoingWit[Math.floor(Math.random() * ongoingWit.length)];
+  }
+  let out = desc || "No details available.";
+  if (row.source) out += `<br><a href='${row.source}' target='_blank'>Source 🔗</a>`;
+  return out;
+}
+const conclusionLines = [
+  "No wonder he likes to sue so much—he's made more money litigating than any of his businesses ever turned profit.",
+  "The courtroom: where showmanship meets billable hours.",
+  "Legal drama: the only Trump venture that never files for bankruptcy.",
+  "If lawsuits were Olympic sports, he'd be swimming in gold medals.",
+  "Some build empires, others build case files—Trump's specialty? Doing both simultaneously.",
+  "The art of the deal? More like the art of the appeal.",
+  "Why build walls when you can build legal precedents?",
+  "In the legal circus, Trump remains the ringmaster of chaos.",
+  "Subpoenas: the only invitations he never declines.",
+  "Making America Litigate Again—one courtroom at a time."
+];
+function showRandomConclusion() {
+  var conclusionDiv = document.getElementById('dynamic-conclusion');
+  if (conclusionDiv) {
+    var randomIndex = Math.floor(Math.random() * conclusionLines.length);
+    conclusionDiv.textContent = conclusionLines[randomIndex];
+  }
+}
+showRandomConclusion();
+
+
     document.getElementById('loadMoreMain').onclick = function() {
       mainPage++;
       renderMainTable();
@@ -214,74 +473,24 @@
       renderSideshowTable();
     };
 
-    // Disclaimer randomizer
-    const disclaimers = [
-      "Disclaimer: AI-generated, human-edited, and not to be used for actual life decisions.",
-      "Disclaimer: No actual barristers were harmed in the making of this website.",
-      "Disclaimer: All stats are for fun and may be less accurate than a campaign promise.",
-      "Disclaimer: If you’re reading this for legal advice, you’re already in a spot of bother."
-    ];
-    document.getElementById('disclaimer').textContent =
-      disclaimers[Math.floor(Math.random() * disclaimers.length)];
-  </script>
-  <script>
-    // Step 1: Make a list of your favorite snarky comments
-    var snarkyComments = [
-      "Step right up! Witness more indictments than a season of Law & Order.",
-      "Watch legal history unfold, one subpoena at a time.",
-      "More plot twists than a soap opera marathon.",
-      "If you like court drama, you’re in for a treat (and possibly a headache).",
-      "Legal circus: now with extra popcorn and subpoenas.",
-      "Bring your own gavel—you're going to want to judge."
-    ];
-    
-    // Step 2: Pick a random one every time
-    function showRandomSnark() {
-      var randomIndex = Math.floor(Math.random() * snarkyComments.length);
-      var snarkSpan = document.getElementById('snark-legal');
-      if (snarkSpan) {
-        snarkSpan.textContent = snarkyComments[randomIndex];
+    // Details row logic
+    function toggleDetailsRow(btn) {
+      const table = btn.closest('table');
+      const old = table.querySelector('.details-row');
+      if (old) old.parentNode.removeChild(old);
+      if (btn.classList.contains('open')) {
+        btn.classList.remove('open');
+        return;
       }
+      table.querySelectorAll('.details-btn').forEach(b => b.classList.remove('open'));
+      btn.classList.add('open');
+      const tr = btn.closest('tr');
+      const details = btn.getAttribute('data-details');
+      const detailsRow = document.createElement('tr');
+      detailsRow.className = 'details-row';
+      detailsRow.innerHTML = `<td colspan="7">${details}</td>`;
+      tr.parentNode.insertBefore(detailsRow, tr.nextSibling);
     }
-    
-    // Step 3: Run the function when the page loads
-    showRandomSnark();
-    </script>
-    <script>
-      const mainDocketSubtitles = [
-        "Where Justice Goes to Chase Its Own Tail",
-        "The Never-Ending Season Finale",
-        "Now Streaming: Law & Disorder",
-        "A Masterclass in Legal Gymnastics",
-        "Because the Rule of Law Needed a Plot Twist",
-        "The Original Reality Courtroom",
-        "Litigation, Lamentation, and Libel—Oh My!",
-        "The Strategic Abuse of Judicial Process",
-        "The Only Courtroom with a Popcorn Machine",
-        "All Rise for the Drama"
-      ];
-      
-      const sideshowDocketSubtitles = [
-        "The Extended Universe of Legal Nonsense",
-        "A Parade of Enablers, Grifters, and Legal Hang-Gliders",
-        "Where the Associates Juggle Subpoenas",
-        "The Supporting Clowns Take the Stage",
-        "The Spin-Off Nobody Asked For",
-        "Legal Limbo: How Low Can They Go?",
-        "The Legal Equivalent of a Clown Car",
-        "The Associates’ Hour of Questionable Glory",
-        "Because Every Circus Needs a Sideshow",
-        "The Perpetual Motion Machine of Excuses"
-      ];
-      
-      function pick(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-      }
-      </script>
-      <script>
-        document.getElementById('main-docket-subtitle').textContent = `"${pick(mainDocketSubtitles)}"`;
-        document.getElementById('sideshow-docket-subtitle').textContent = `"${pick(sideshowDocketSubtitles)}"`;
-        </script>
-        
+  </script>
 </body>
 </html>
