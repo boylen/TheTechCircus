@@ -258,6 +258,16 @@
       </div>
       <button class="share-btn" onclick="event.stopPropagation();alert('Share feature coming soon!')">Share <span>🔗</span></button>
     </div>
+    <div class="act-card" onclick="location.href='america-winning/put-the-best-on-the-field.html'">
+      <span class="act-emoji">🏈</span>
+      <img src="images/put-the-best-circus.jpg" class="act-illustration" alt="Put the Best on the Field Editorial Art">
+      <div class="act-title">Put the Best on the Field <span>🎪</span></div>
+      <div class="act-desc">
+        <span id="snark-best"></span>
+      </div>
+      <button class="btn" onclick="event.stopPropagation();location.href='america-winning/put-the-best-on-the-field.html'">Explore <span>🏆</span></button>
+    </div>
+    
     <!-- Add more act-cards as needed, with more circus emojis! -->
   </div>
   <div class="disclaimer" id="disclaimer">
@@ -303,9 +313,21 @@
     function generateSnark() {
       return snarkLines[Math.floor(Math.random() * snarkLines.length)];
     }
+    const snarkBest = [
+      `Where the <span class="tooltip">quarterbacks<span class="tooltiptext">decision-makers</span></span> fumble, and the <span class="tooltip">cheerleaders<span class="tooltiptext">loyalists</span></span> call the plays. Scoreboard not included.`,
+      `Tonight, <span class="tooltip">teamwork<span class="tooltiptext">actual competence</span></span> sits on the bench while <span class="tooltip">showmanship<span class="tooltiptext">grandstanding</span></span> runs the field.`,
+      `Here, the <span class="tooltip">MVPs<span class="tooltiptext">most valuable professionals</span></span> watch from the sidelines, and the <span class="tooltip">ringmaster<span class="tooltiptext">boss</span></span> calls audibles no one understands.`,
+      `Where <span class="tooltip">strategy<span class="tooltiptext">planning</span></span> is replaced by <span class="tooltip">improvisation<span class="tooltiptext">making it up as we go</span></span>. Touchdown, anyone?`,
+      `Tonight, <span class="tooltip">fumbles<span class="tooltiptext">mistakes</span></span> outnumber <span class="tooltip">victories<span class="tooltiptext">successes</span></span>. The crowd is still waiting for a win.`
+    ];
+    function generateSnarkBest() {
+      return snarkBest[Math.floor(Math.random() * snarkBest.length)];
+    }
+
     document.getElementById('snark-legal').innerHTML = generateSnark();
     document.getElementById('snark-oopsies').innerHTML = generateSnark();
     document.getElementById('snark-ai').innerHTML = generateSnark();
+    document.getElementById('snark-best').innerHTML = generateSnarkBest();
 
     // Disclaimer randomizer
     const disclaimers = [

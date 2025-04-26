@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Put the Best on the Field | The Tech Circus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fffbe7 0%, #ffe3e3 100%);
+      font-family: 'Lato', Arial, sans-serif;
+      color: #222;
+    }
+    .header {
+      text-align: center;
+      padding: 48px 10px 32px 10px;
+      background: linear-gradient(120deg, #fffbe7 70%, #ffe3e3 100%);
+      border-bottom: 7px solid #f9c846;
+      position: relative;
+    }
+    .header:before, .header:after {
+      content: "🎪";
+      font-size: 2.4em;
+      position: absolute;
+      top: 18px;
+    }
+    .header:before { left: 22px; }
+    .header:after { right: 22px; }
+    .headline {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 2.3em;
+      color: #e63946;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #f9c846, 4px 4px 0 #fffbe7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .headline .emoji {
+      font-size: 1.2em;
+      vertical-align: middle;
+    }
+    .subtitle {
+      font-size: 1.15em;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+    .acts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 800px;
+      margin: 40px auto 30px auto;
+      padding: 0 20px;
+    }
+    .act-card {
+      background: linear-gradient(120deg, #fffbe7 80%, #ffe3e3 100%);
+      border-radius: 18px;
+      box-shadow: 0 6px 28px rgba(234, 179, 8, 0.13);
+      border: 3px solid #f9c846;
+      padding: 26px 22px 24px 22px;
+      text-align: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .act-emoji {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .act-illustration {
+      max-width: 120px;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 2px 8px #f9c84655);
+      border-radius: 10px;
+    }
+    .act-title {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 1.23em;
+      color: #e63946;
+      margin-bottom: 7px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .act-desc {
+      min-height: 52px;
+      font-size: 1.07em;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    blockquote {
+      background: #fbe9e7;
+      border-left: 6px solid #d84315;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      color: #444;
+      border-radius: 12px;
+    }
+    .prompt {
+      background: #e3f2fd;
+      color: #1565c0;
+      font-size: 0.97rem;
+      border-left: 4px solid #1565c0;
+      margin: 1rem 0 1.5rem 0;
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+      text-align: left;
+    }
+    .footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 1em;
+      margin: 38px 0 18px 0;
+      padding-bottom: 12px;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 700px) {
+      .headline { font-size: 1.3em; }
+      .acts-grid { grid-template-columns: 1fr; }
+      .header { padding: 30px 5px 20px 5px; }
+      .act-illustration { max-width: 90px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="headline">
+      <span class="emoji">🎪</span>
+      Put the Best on the Field
+      <span class="emoji">🏆</span>
+    </div>
+    <div class="subtitle">
+      The MAGA Circus of Promises, Penalties, and the American Playbook
+    </div>
+  </div>
+  <div class="acts-grid">
+
+    <!-- Intro Card -->
+    <div class="act-card">
+      <span class="act-emoji">🎩</span>
+      <img src="images/trump-coach-circus.jpg" class="act-illustration" alt="Trump as Circus Coach">
+      <div class="act-title">The Ringmaster's Game Plan</div>
+      <div class="act-desc">
+        Like you, I want to see America win. President Trump’s fighting spirit and bold ideas have inspired millions. But even the best ringmaster needs the right acts-and has to play by the rules-to wow the crowd and bring home the trophy.<br><br>
+        <strong>Agenda 47:</strong>
+        <ul>
+          <li>Seal the border and restore law and order</li>
+          <li>Bring back American manufacturing and jobs</li>
+          <li>Achieve energy dominance</li>
+          <li>Cut taxes and keep more money in workers’ pockets</li>
+          <li>Put America First in every deal and on the world stage</li>
+          <li>Protect our schools and end “woke” ideology</li>
+        </ul>
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> Trump as a circus ringmaster in a red coat and top hat, holding a playbook labeled “Agenda 47.” The tent is bustling, but some acts are missing or off-script. The crowd is a mix of applause and confusion. Retro colors: gold, red, blue, cream.</div>
+    </div>
+
+    <!-- Border Security Card -->
+    <div class="act-card">
+      <span class="act-emoji">🚧</span>
+      <img src="images/incomplete-wall-circus.jpg" class="act-illustration" alt="Incomplete Wall Circus">
+      <div class="act-title">Act 1: The Great Wall Half-Built</div>
+      <div class="act-desc">
+        We all wanted a secure border and a strong defense. The plan was bold, but the wall wasn’t finished, and the system is still overwhelmed. Some new rules and executive orders were challenged in court, and not all of them stood up-so the team had to regroup.
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> A circus fence that stops halfway across the ring. Clowns and animals wander through the gap. The ringmaster (Trump) looks frustrated. The crowd is a mix of applause and concern. Circus poster style, warm reds and golds.</div>
+    </div>
+
+    <!-- Jobs & Tariffs Card -->
+    <div class="act-card">
+      <span class="act-emoji">🤹‍♂️</span>
+      <img src="images/jobs-fumble-circus.jpg" class="act-illustration" alt="Jobs Fumble Circus">
+      <div class="act-title">Act 2: The Tariff Tightrope</div>
+      <div class="act-desc">
+        Bringing back American jobs and factories was a top promise. But when tariffs went up, so did prices for families and farmers. Some jobs came back, but others didn’t. A few of these policies ran into legal challenges, and the results were mixed.
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> A circus performer juggling balls labeled “Jobs,” “Tariffs,” and “Prices.” One ball is dropped, rolling toward the crowd. The ringmaster looks on, concerned. Vintage circus poster style.</div>
+    </div>
+
+    <!-- Executive Orders Card -->
+    <div class="act-card">
+      <span class="act-emoji">🎟️</span>
+      <img src="images/referee-flag-circus.jpg" class="act-illustration" alt="Referee Throws a Flag Circus">
+      <div class="act-title">Act 3: The Executive Order Juggle</div>
+      <div class="act-desc">
+        Some of the boldest executive orders-on immigration, education, and more-were stopped by judges who said they didn’t fit the rules. Even ringmasters with the best intentions have to play by the circus rulebook, or risk having big acts called back.
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> A circus referee throws a giant red flag as the ringmaster (Trump) juggles scrolls labeled “Orders.” The crowd reacts with surprise. Retro circus style, bold colors.</div>
+    </div>
+
+    <!-- Energy Card -->
+    <div class="act-card">
+      <span class="act-emoji">⛽</span>
+      <img src="images/energy-sideline-circus.jpg" class="act-illustration" alt="Energy Sideline Circus">
+      <div class="act-title">Act 4: The Prize Still Out of Reach</div>
+      <div class="act-desc">
+        “Drill, baby, drill” fired us up, but energy prices are still high, and we’re still dealing with global markets. The play was called, but we need a better game plan to win this one.
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> A circus strongman tries to lift a giant gas pump labeled “Prices.” The crowd watches, some cheering, some worried. Ringmaster looks on, pondering. Circus poster style, gold and red.</div>
+    </div>
+
+    <!-- Foreign Policy Card -->
+    <div class="act-card">
+      <span class="act-emoji">🌍</span>
+      <img src="images/sideline-confusion-circus.jpg" class="act-illustration" alt="Sideline Confusion Circus">
+      <div class="act-title">Act 5: The World Stage Tightrope</div>
+      <div class="act-desc">
+        Standing up to China, Iran, and North Korea was the right call. But sometimes our team looked confused, and the other side scored anyway. We need a defense that can finish the job.
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> A circus tightrope act with the ringmaster (Trump) and assistants balancing on a rope above a globe. Some lose balance, the crowd gasps. Vintage circus poster style.</div>
+    </div>
+
+    <!-- Reflection Card -->
+    <div class="act-card">
+      <span class="act-emoji">🎤</span>
+      <img src="images/open-door-circus.jpg" class="act-illustration" alt="Open Door Circus">
+      <div class="act-title">Ringmaster’s Reflection</div>
+      <div class="act-desc">
+        <blockquote>
+          “A winning circus turns promises into applause-and plays fair to keep the crowd coming back.”
+        </blockquote>
+        The best ringmasters watch the tape, learn from mistakes, and change up the acts to stay ahead. Every win has to count-no shortcuts, no penalties, just solid teamwork and smart execution. That’s the American way: always learning, always improving, always fighting to win.<br><br>
+        <strong>What’s your play call for America’s next big show?</strong><br>
+        <ul>
+          <li>Do you want a ringmaster who puts loyalty over skill, or one who leads a team to victory-and keeps the win?</li>
+          <li>What kind of America do you want to build for your kids and grandkids?</li>
+        </ul>
+        <span style="font-size:1.1em;">Step right up and share your thoughts!</span>
+      </div>
+      <div class="prompt"><strong>Prompt:</strong> A circus tent with an open flap, sunlight streaming in, and a welcome mat that reads “Let’s Talk.” The crowd is invited in, warm and hopeful. Vintage circus style.</div>
+    </div>
+  </div>
+  <div class="footer">
+    &copy; 2025 The Tech Circus &mdash; Where spectacle and common sense collide. <span style="font-size:1.2em;">🎠</span>
+  </div>
+</body>
+</html>
