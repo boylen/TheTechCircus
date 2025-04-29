@@ -340,22 +340,15 @@
     const pageSize = 5; // Number of rows to show per load
 
 
-    // Load data from courtlistener API (adjust path if needed)
-    fetch('https://www.courtlistener.com/api/rest/v3/dockets/?party_name=trump&order_by=-dateFiled')
-  .then(r => r.json())
-  .then(data => {
-    mainData = data.results.map(docket => ({
-      title: docket.caseName,
-      category: docket.court,
-      status: docket.docketEntries[0]?.entryType || 'Unknown',
-      cost: 'N/A',
-      workhours: 'N/A',
-      timeframe: `${docket.dateFiled} – ${docket.dateTerminated || 'Present'}`,
-      description: docket.docketEntries[0]?.description || '',
-      source: 'https://www.courtlistener.com' + docket.absolute_url
-    }));
-    renderMainTable();
-  });
+    // Load data from JSON (adjust path if needed)
+    fetch('trump-legal-cases.json')
+      .then(r => r.json())
+      .then(data => {
+        mainData = data.main_docket || [];
+        sideshowData = data.sideshow_docket || [];
+        renderMainTable();
+        renderSideshowTable();
+      });
 
     function renderMainTable() {
       const tbody = document.querySelector('#main-docket-table tbody');
