@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           // Load both datasets with correct paths
           [fails, wins] = await Promise.all([
-            fetch('/failures/data/general/failures.json').then(r => {
-              if (!r.ok) throw new Error(`Failed to fetch failures.json (${r.status})`);
+            fetch('/oopsies/data/general/oopsies.json').then(r => {
+              if (!r.ok) throw new Error(`Failed to fetch oopsies.json (${r.status})`);
               return r.json();
             }),
-            fetch('/failures/data/trump/brainfarts.json').then(r => {
+            fetch('/oopsies/data/trump/brainfarts.json').then(r => {
               if (!r.ok) throw new Error(`Failed to fetch brainfarts.json (${r.status})`);
               return r.json();
             })
@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
             new Promise((resolve) => {
               const xhr = new XMLHttpRequest();
               xhr.overrideMimeType('application/json');
-              xhr.open('GET', '/data/general/failures.json', true);
+              xhr.open('GET', '/data/general/oopsies.json', true);
               xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                   if (xhr.status === 200) {
                     resolve(JSON.parse(xhr.responseText));
                   } else {
-                    console.error('Failed to load failures.json using XHR');
+                    console.error('Failed to load oopsies.json using XHR');
                     resolve([]);
                   }
                 }
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Check if we have valid data
         if (!fails || !Array.isArray(fails)) {
-          console.error('Invalid failures data:', fails);
+          console.error('Invalid oopsies data:', fails);
           fails = [];
         }
         
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function showDetails(item) {
-      const modal = document.getElementById('failures-modal');
+      const modal = document.getElementById('oopsies-modal');
       const contentContainer = document.getElementById('modal-content-container');
       
       if (!modal || !contentContainer) {
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function setupModals() {
-      const modal = document.getElementById('failures-modal');
+      const modal = document.getElementById('oopsies-modal');
       if (!modal) {
         console.error('Modal element not found');
         return;

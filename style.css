@@ -1,6 +1,6 @@
 /* style.css - Add at VERY TOP */
 /* PROTECTION AGAINST STYLE LEAKAGE */
-.failures-page *:not(.failures-page) {
+.oopsies-page *:not(.oopsies-page) {
   all: unset !important;
 }
 /* style.css */
@@ -35,20 +35,20 @@ body {
     margin: 40px 10vw;
   }
   /* style.css - Add only these changes */
-.failures-page table {
+.oopsies-page table {
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
 }
 
-.failures-page th, 
-.failures-page td {
+.oopsies-page th, 
+.oopsies-page td {
   padding: 1rem;
   text-align: left;
   border-bottom: 2px solid #e63946;
 }
 
-.failures-page th {
+.oopsies-page th {
   background: #e63946;
   color: white;
   font-family: 'Abril Fatface', cursive;

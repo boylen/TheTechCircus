@@ -1,5 +1,5 @@
-/* FAILURES PAGE SPECIFIC STYLES */
-.failures-page {
+/* OOPSIES PAGE SPECIFIC STYLES */
+.oopsies-page {
   background: #fff5f5;
   padding: 2rem;
   font-family: Arial, sans-serif;
@@ -50,7 +50,7 @@ header h1 {
 }
 
 /* Tables */
-.failures-table,
+.oopsies-table,
 .wins-table {
   width: 100%;
   border-collapse: collapse;
@@ -60,7 +60,7 @@ header h1 {
   font-size: 0.95rem;
 }
 
-.failures-table th,
+.oopsies-table th,
 .wins-table th {
   padding: 1rem;
   text-align: left;
@@ -68,7 +68,7 @@ header h1 {
   font-weight: bold;
 }
 
-.failures-table th {
+.oopsies-table th {
   background: #e63946;
 }
 
@@ -76,14 +76,14 @@ header h1 {
   background: #2a9d8f;
 }
 
-.failures-table td,
+.oopsies-table td,
 .wins-table td {
   padding: 1rem;
   border-bottom: 1px solid #eee;
   vertical-align: top;
 }
 
-.failures-table tr:hover,
+.oopsies-table tr:hover,
 .wins-table tr:hover {
   background-color: rgba(0,0,0,0.02);
 }
@@ -130,7 +130,7 @@ header h1 {
 }
 
 /* Modal */
-#failures-modal {
+#oopsies-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -250,7 +250,7 @@ tr.loading-row td {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .failures-page {
+  .oopsies-page {
     padding: 1rem;
   }
   
@@ -259,14 +259,14 @@ tr.loading-row td {
     padding: 1rem;
   }
   
-  .failures-table,
+  .oopsies-table,
   .wins-table {
     font-size: 0.85rem;
   }
   
-  .failures-table th,
+  .oopsies-table th,
   .wins-table th,
-  .failures-table td,
+  .oopsies-table td,
   .wins-table td {
     padding: 0.75rem 0.5rem;
   }
@@ -274,26 +274,26 @@ tr.loading-row td {
 
 /* Make tables responsive by stacking on mobile */
 @media (max-width: 600px) {
-  .failures-table,
+  .oopsies-table,
   .wins-table {
     display: block;
     width: 100%;
   }
   
-  .failures-table thead,
+  .oopsies-table thead,
   .wins-table thead {
     display: none;
   }
   
-  .failures-table tbody,
+  .oopsies-table tbody,
   .wins-table tbody,
-  .failures-table tr,
+  .oopsies-table tr,
   .wins-table tr {
     display: block;
     width: 100%;
   }
   
-  .failures-table td,
+  .oopsies-table td,
   .wins-table td {
     display: block;
     text-align: right;
@@ -302,7 +302,7 @@ tr.loading-row td {
     border-bottom: none;
   }
   
-  .failures-table td:before,
+  .oopsies-table td:before,
   .wins-table td:before {
     content: attr(data-label);
     position: absolute;
@@ -311,7 +311,7 @@ tr.loading-row td {
     text-align: left;
   }
   
-  .failures-table tr,
+  .oopsies-table tr,
   .wins-table tr {
     margin-bottom: 1rem;
     border-bottom: 1px solid #ddd;
