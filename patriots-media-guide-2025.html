@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Exposing the Media Swamp: A Patriot’s Guide to Who Owns the News in 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Embedded style to match your attached style.css -->
   <style>
     body {
       background: #FAF3E3;
@@ -113,6 +112,48 @@
       font-style: italic;
       color: #333;
     }
+    .owner-row {
+  cursor: pointer;
+  background: #f8f8f8;
+  transition: background 0.3s;
+}
+.owner-row:focus {
+  outline: 2px solid #0055a5;
+}
+.details-row td {
+  background: #fff;
+  border-left: 4px solid #0055a5;
+}
+.details-box {
+  padding: 1rem;
+}
+.why-matters {
+  background: #fffae5;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+    details {
+      margin: 1.5em 0;
+      border: 1px solid #e63946;
+      border-radius: 8px;
+      background: #f8f8f8;
+    }
+    summary {
+      padding: 1rem;
+      font-family: 'Abril Fatface', cursive;
+      color: #002244;
+      font-size: 1.1em;
+      cursor: pointer;
+      outline: none;
+    }
+    details[open] summary {
+      border-bottom: 2px solid #e63946;
+    }
+    .content-wrapper {
+      padding: 1rem 1.5rem 1.5rem 1.5rem;
+    }
     @media (max-width: 600px) {
       .container {
         padding: 10px 4vw;
@@ -122,6 +163,28 @@
         height: 35vw;
         min-height: 120px;
       }
+      .owner-header {
+        cursor: pointer;
+        background: #f8f8f8;
+        transition: background 0.3s;
+      }
+      .owner-header:hover {
+  background: #f0f0f0;
+      }
+      .details-content {
+        padding: 1rem;
+        border-left: 4px solid #0055a5;
+        margin: 1rem 0;
+      }
+      .owner-row:focus {
+        outline: 2px solid #0055a5;
+      }
+      .why-matters {
+        background: #fffae5;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+}
     }
   </style>
 </head>
@@ -137,109 +200,171 @@
 
     <h2>The Owners: Wealth, Power, and Priorities</h2>
     <table>
-      <tr>
-        <th>Owner</th>
-        <th>Net Worth</th>
-        <th>Key Holdings</th>
-        <th>Tactics</th>
-        <th>Foreign Ties</th>
-        <th>Spending</th>
-      </tr>
-      <tr>
-        <td>Rupert Murdoch & Family</td>
-        <td>$23.1B (Forbes, 2025)</td>
-        <td>Fox Corp ($23.1B market cap), News Corp</td>
-        <td>Frames issues as “us vs. elites”; 70% of Fox Corp profits from Fox News’ sensationalism</td>
-        <td>News Corp lobbies for deregulation in the UK</td>
-        <td>$200M Montana ranch, $80M NYC penthouses, billions in divorce settlements</td>
-      </tr>
-      <tr>
-        <td>Jeff Bezos</td>
-        <td>$201.6B (Forbes, May 2025)</td>
-        <td>Amazon (10% stake), Blue Origin, WaPo</td>
-        <td>Prioritizes climate coverage (aligns with Amazon’s $2B Climate Pledge Fund), downplays antitrust scrutiny</td>
-        <td>-</td>
-        <td>$500M yacht, $165M Beverly Hills mansion, $38B in Amazon stock sold since 1997</td>
-      </tr>
-      <tr>
-        <td>Chris Ruddy</td>
-        <td>$3.3B (Newsmax IPO, 2025)</td>
-        <td>Newsmax</td>
-        <td>Pushes pro-Trump content, IPO surged 735% post-2024 election</td>
-        <td>Qatari royal Sheikh Sultan bin Jassim Al-Thani (15% stake, $1.6B value)</td>
-        <td>$50M Palm Beach estate, $75M on studio upgrades in 2025</td>
-      </tr>
-      <tr>
-        <td>Sulzberger Family</td>
-        <td>-</td>
-        <td>New York Times ($8B market cap, 2025)</td>
-        <td>Blends news and opinion; 68% of Trump headlines in 2024 used negative framing (“chaos,” “scandal”)</td>
-        <td>-</td>
-        <td>15-acre Hamptons compound; $550M investment in The Athletic</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Owner</th>
+          <th>Net Worth</th>
+          <th>Key Holdings</th>
+          <th>Tactics</th>
+          <th>Foreign Ties</th>
+          <th>Spending</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Jeff Bezos -->
+        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="bezos-details"
+        onclick="toggleDetails('bezos')" onkeypress="if(event.key==='Enter'){toggleDetails('bezos');}">
+        <td>
+          <span id="bezos-arrow">▶</span> Jeff Bezos
+          <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
+        </td>
+        
+      <td>$201.6B (Forbes, May 2025)</td>
+      <td>Amazon (10% stake), Blue Origin, WaPo</td>
+      <td>Prioritizes climate coverage (aligns with Amazon’s $2B Climate Pledge Fund), downplays antitrust scrutiny</td>
+      <td>-</td>
+      <td>$500M yacht, $165M Beverly Hills mansion, $38B in Amazon stock sold since 1997</td>
+    </tr>
+    <tr class="details-row" id="bezos-details" style="display: none;">
+      <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+        <div>
+          <strong>More Details:</strong>
+          <ul>
+            <li>WaPo runs 3:1 climate-to-antitrust coverage ratio</li>
+            <li>Amazon’s carbon emissions rose 18% in 2024</li>
+            <li>Amazon receives significant tax breaks for climate PR</li>
+          </ul>
+          <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+            <strong>Why This Matters:</strong>
+            <ul>
+              <li>Shapes national debate on climate and tech regulation</li>
+              <li>May lead to under-reporting of Amazon’s own controversies</li>
+              <li>Impacts how you see “big tech” in the news</li>
+            </ul>
+          </div>
+          <div class="cartoon">
+            <!-- Bezos SVG cartoon here -->
+          </div>
+        </div>
+      </td>
+    </tr>
+    
+    
+        <!-- Chris Ruddy -->
+        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="ruddy-details"
+            onclick="toggleDetails('ruddy')" onkeypress="if(event.key==='Enter'){toggleDetails('ruddy');}">
+            <td>
+              <span id="ruddy-arrow">▶</span> Chris Ruddy
+              <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
+            </td>
+            
+          <td>$3.3B (Newsmax IPO, 2025)</td>
+          <td>Newsmax</td>
+          <td>Pushes pro-Trump content, IPO surged 735% post-2024 election</td>
+          <td>Qatari royal Sheikh Sultan bin Jassim Al-Thani (15% stake, $1.6B value)</td>
+          <td>$50M Palm Beach estate, $75M on studio upgrades in 2025</td>
+        </tr>
+        <tr class="details-row" id="ruddy-details" style="display: none;">
+          <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+            <div>
+              <strong>More Details:</strong>
+              <ul>
+                <li>Qatar’s investment ROI: 3200% since 2020</li>
+                <li>Qatar’s influence led to softened Middle East coverage</li>
+                <li>Newsmax’s IPO made Ruddy a billionaire overnight</li>
+              </ul>
+              <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+                <strong>Why This Matters:</strong>
+                <ul>
+                  <li>Foreign money can shape “patriot” news in the U.S.</li>
+                  <li>Editorial independence may be compromised</li>
+                  <li>What you see as “America First” may be influenced by foreign priorities</li>
+                </ul>
+              </div>
+              <div class="cartoon">
+                <!-- Optional: Add Newsmax cartoon SVG here -->
+              </div>
+            </div>
+          </td>
+        </tr>
+    
+        <!-- Rupert Murdoch -->
+        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="murdoch-details"
+            onclick="toggleDetails('murdoch')" onkeypress="if(event.key==='Enter'){toggleDetails('murdoch');}">
+            <td>
+              <span id="murdoch-arrow">▶</span> Rupert Murdoch
+              <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
+            </td>
+            
+          <td>$23.1B (Forbes, 2025)</td>
+          <td>Fox Corp ($23.1B market cap), News Corp</td>
+          <td>Frames issues as “us vs. elites”; 70% of Fox Corp profits from Fox News’ sensationalism</td>
+          <td>News Corp lobbies for deregulation in the UK</td>
+          <td>$200M Montana ranch, $80M NYC penthouses, billions in divorce settlements</td>
+        </tr>
+        <tr class="details-row" id="murdoch-details" style="display: none;">
+          <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+            <div>
+              <strong>More Details:</strong>
+              <ul>
+                <li>Fox News drives 70% of parent company profits</li>
+                <li>Border crisis coverage generates $400M/year</li>
+                <li>Major lobbying for deregulation in the UK</li>
+              </ul>
+              <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+                <strong>Why This Matters:</strong>
+                <ul>
+                  <li>Shapes U.S. political debate, especially on immigration</li>
+                  <li>Profit incentives may drive more sensational coverage</li>
+                  <li>Corporate consolidation impacts local news choices</li>
+                </ul>
+              </div>
+              <div class="cartoon">
+                <!-- Optional: Add Murdoch cartoon SVG here -->
+              </div>
+            </div>
+          </td>
+        </tr>
+    
+        <!-- Sulzberger Family -->
+        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="sulzberger-details"
+            onclick="toggleDetails('sulzberger')" onkeypress="if(event.key==='Enter'){toggleDetails('sulzberger');}">
+            <td>
+              <span id="sulzberger-arrow">▶</span> Sulzberger Family
+              <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
+            </td>
+            Sulzberger Family</td>
+          <td>-</td>
+          <td>New York Times ($8B market cap, 2025)</td>
+          <td>Blends news and opinion; 68% of Trump headlines in 2024 used negative framing (“chaos,” “scandal”)</td>
+          <td>-</td>
+          <td>15-acre Hamptons compound; $550M investment in The Athletic</td>
+        </tr>
+        <tr class="details-row" id="sulzberger-details" style="display: none;">
+          <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+            <div>
+              <strong>More Details:</strong>
+              <ul>
+                <li>NYT blends news and opinion more than most U.S. dailies</li>
+                <li>68% of Trump headlines in 2024 used negative framing</li>
+                <li>Major investment in digital sports media (The Athletic)</li>
+              </ul>
+              <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+                <strong>Why This Matters:</strong>
+                <ul>
+                  <li>Opinion framing can shape how you view national events</li>
+                  <li>Digital expansion means NYT influences more than just print readers</li>
+                  <li>Subscription revenue model may incentivize clickbait</li>
+                </ul>
+              </div>
+              <div class="cartoon">
+                <!-- Optional: Add NYT cartoon SVG here -->
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
-
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
-        <ellipse cx="160" cy="90" rx="150" ry="80" fill="#f8e9dc"/>
-        <rect x="120" y="110" width="80" height="30" rx="8" fill="#c1b7a3"/>
-        <ellipse cx="160" cy="65" rx="35" ry="22" fill="#f7d7b7"/>
-        <rect x="145" y="87" width="30" height="25" rx="8" fill="#e63946"/>
-        <line x1="160" y1="87" x2="160" y2="140" stroke="#a57a5a" stroke-width="2"/>
-        <line x1="160" y1="87" x2="130" y2="140" stroke="#a57a5a" stroke-width="2"/>
-        <line x1="160" y1="87" x2="190" y2="140" stroke="#a57a5a" stroke-width="2"/>
-        <text x="125" y="127" font-size="10" fill="#fff">Crisis at the Border!</text>
-        <text x="110" y="162" font-size="10" fill="#888">UK Investors</text>
-      </svg>
-      <div class="cartoon-caption">
-        Murdoch as a gilded puppet master strings up a Fox News anchor, whose teleprompter reads “Crisis at the Border!” while shadowy figures labeled “UK Investors” adjust the strings.
-      </div>
-    </div>
-
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
-        <ellipse cx="100" cy="120" rx="30" ry="18" fill="#d1e3f7"/>
-        <rect x="90" y="70" width="20" height="40" rx="8" fill="#b9b9b9"/>
-        <circle cx="100" cy="70" r="12" fill="#e3e3e3"/>
-        <rect x="170" y="90" width="100" height="15" rx="7" fill="#e63946"/>
-        <text x="180" y="102" font-size="10" fill="#fff">Climate Emergency!</text>
-        <rect x="60" y="150" width="80" height="18" rx="6" fill="#888"/>
-        <text x="65" y="163" font-size="10" fill="#fff">Amazon Warehouses</text>
-        <rect x="60" y="160" width="80" height="7" rx="3" fill="#e63946" opacity="0.3"/>
-      </svg>
-      <div class="cartoon-caption">
-        Bezos, in a spacesuit, launches a WaPo headline rocket labeled “Climate Emergency!” while Amazon warehouses below belch smoke.
-      </div>
-    </div>
-
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
-        <ellipse cx="160" cy="120" rx="40" ry="20" fill="#e2d6f7"/>
-        <rect x="150" y="80" width="20" height="40" rx="7" fill="#e63946"/>
-        <ellipse cx="160" cy="80" rx="11" ry="11" fill="#fff"/>
-        <rect x="170" y="100" width="18" height="8" rx="3" fill="#e63946"/>
-        <text x="175" y="107" font-size="9" fill="#fff">Qatar</text>
-        <rect x="120" y="150" width="80" height="10" rx="4" fill="#888"/>
-        <text x="125" y="158" font-size="10" fill="#fff">Election Fraud</text>
-      </svg>
-      <div class="cartoon-caption">
-        A Newsmax anchor shouts into a mic shaped like a Qatari flag, while a shadowy figure (Sheikh Sultan) adjusts the volume knob labeled “Election Fraud.”
-      </div>
-    </div>
-
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
-        <ellipse cx="110" cy="120" rx="25" ry="13" fill="#f5e7e7"/>
-        <rect x="95" y="80" width="30" height="40" rx="7" fill="#b7b7b7"/>
-        <rect x="115" y="90" width="60" height="10" rx="4" fill="#f7d7b7"/>
-        <text x="120" y="98" font-size="9" fill="#e63946">Democracy Dies in Darkness</text>
-        <rect x="190" y="120" width="40" height="18" rx="6" fill="#e63946"/>
-        <text x="195" y="132" font-size="10" fill="#fff">Subscription Revenue</text>
-      </svg>
-      <div class="cartoon-caption">
-        A Sulzberger heir writes “Democracy Dies in Darkness” on a parchment while a butler hands them a check labeled “Subscription Revenue.”
-      </div>
-    </div>
 
     <h2>Foreign Investors: Hidden Hands in U.S. Media</h2>
     <table>
@@ -268,8 +393,8 @@
         <td>Suppresses U.S. election content, boosts pro-China videos</td>
       </tr>
     </table>
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
+    <div class="cartoon" aria-label="Foreign Influence cartoon">
+      <svg viewBox="0 0 320 180" aria-hidden="true">
         <circle cx="160" cy="90" r="65" fill="#d6f1f7"/>
         <rect x="120" y="80" width="40" height="25" rx="8" fill="#e63946"/>
         <rect x="170" y="70" width="40" height="25" rx="8" fill="#e3b51a"/>
@@ -307,8 +432,8 @@
         <td>Policy sway</td>
       </tr>
     </table>
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
+    <div class="cartoon" aria-label="Ratings cartoon">
+      <svg viewBox="0 0 320 180" aria-hidden="true">
         <rect x="60" y="90" width="200" height="40" rx="10" fill="#f7e7b7"/>
         <ellipse cx="100" cy="110" rx="14" ry="14" fill="#e63946"/>
         <ellipse cx="220" cy="110" rx="14" ry="14" fill="#e3b51a"/>
@@ -328,8 +453,8 @@
       <li><b>Bezos:</b> Funds $10B Earth Fund while Amazon’s carbon emissions rise 18% in 2024</li>
       <li><b>Zuckerberg (Meta):</b> Spends $270M on Hawaii bunker; Meta profits from election ad targeting</li>
     </ul>
-    <div class="cartoon">
-      <svg viewBox="0 0 320 180">
+    <div class="cartoon" aria-label="Media Elite cartoon">
+      <svg viewBox="0 0 320 180" aria-hidden="true">
         <rect x="40" y="120" width="240" height="30" rx="12" fill="#e63946"/>
         <ellipse cx="70" cy="150" rx="10" ry="8" fill="#fff"/>
         <ellipse cx="250" cy="150" rx="10" ry="8" fill="#fff"/>
@@ -354,5 +479,21 @@
       Stay tuned for our next installment: <b>“How to Fight Back: A Patriot’s Toolkit for Outsmarting Manipulation.”</b>
     </p>
   </div>
+  <script>
+    function toggleDetails(owner) {
+      const row = document.getElementById(owner + '-details');
+      const arrow = document.getElementById(owner + '-arrow');
+      if (row.style.display === 'none' || row.style.display === '') {
+        row.style.display = 'table-row';
+        if (arrow) arrow.textContent = '▼';
+      } else {
+        row.style.display = 'none';
+        if (arrow) arrow.textContent = '▶';
+      }
+    }
+  </script>
+  
+  
+
 </body>
 </html>
