@@ -13,6 +13,10 @@
       padding: 0 0 80px 0;
       line-height: 1.7;
     }
+    body, html {
+      width: 100%;
+      box-sizing: border-box;
+    }
     .container {
       max-width: 820px;
       margin: 40px auto;
@@ -93,32 +97,58 @@
       font-style: italic;
       color: #333;
     }
-    .owner-row {
-  cursor: pointer;
-  background: #f8f8f8;
-  transition: background 0.3s;
-}
-.owner-row:focus {
-  outline: 2px solid #0055a5;
-}
-.details-row td {
-  background: #fff;
-  border-left: 4px solid #0055a5;
-}
-.details-box {
-  padding: 1rem;
-}
-.why-matters {
-  background: #fffae5;
-  padding: 1rem;
-  border-radius: 4px;
-  margin: 1rem 0;
-}
-body, html {
-  width: 100%;
-  box-sizing: border-box;
+    /* Conglomerate Dropdown Styling */
+.conglomerate {
+  margin: 1.5rem 0;
+  border: 2px solid #e63946;
+  border-radius: 12px;
 }
 
+.conglomerate summary {
+  padding: 1rem;
+  background: #f8f9fa;
+  font-family: 'Abril Fatface', cursive;
+  color: #002244;
+  cursor: pointer;
+}
+
+.content-wrapper {
+  padding: 1rem;
+  background: white;
+}
+
+@media (max-width: 600px) {
+  .content-wrapper div {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+    .owner-row, .owner-header {
+      cursor: pointer;
+      background: #f8f8f8;
+      transition: background 0.3s;
+    }
+    .owner-row:focus, .owner-header:focus {
+      outline: 2px solid #0055a5;
+    }
+    .owner-header:hover {
+      background: #f0f0f0;
+    }
+    .details-row td {
+      background: #fff;
+      border-left: 4px solid #0055a5;
+    }
+    .details-box, .details-content {
+      padding: 1rem;
+      border-left: 4px solid #0055a5;
+      margin: 1rem 0;
+    }
+    .why-matters {
+      background: #fffae5;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+    }
     details {
       margin: 1.5em 0;
       border: 1px solid #e63946;
@@ -139,57 +169,88 @@ body, html {
     .content-wrapper {
       padding: 1rem 1.5rem 1.5rem 1.5rem;
     }
-    @media (max-width: 600px) {
-      .container {
-        padding: 10px 4vw;
-      }
-    @media (max-width: 600px) {
-      .patriot-alert { margin: 1rem; }
+    .patriot-alert {
+      margin: 2rem 0;
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 3px solid #e63946;
     }
-      .owner-header {
-        cursor: pointer;
-        background: #f8f8f8;
-        transition: background 0.3s;
-      }
-      .owner-header:hover {
-  background: #f0f0f0;
-      }
-      .details-content {
-        padding: 1rem;
-        border-left: 4px solid #0055a5;
-        margin: 1rem 0;
-      }
-      .owner-row:focus {
-        outline: 2px solid #0055a5;
-      }
-      .why-matters {
-        background: #fffae5;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-      }
-      @media (max-width: 600px) {
-        h1, h2 {
-          font-size: 1.3em !important;
-          font-weight: bold !important;
-          letter-spacing: 0.5px !important;
-  }
-}
-
-      
-      @media (max-width: 600px) {
-        header {
-          padding: 24px 0 12px 0 !important;
-  }
+    
+    /* MOBILE STYLES */
+    @media (max-width: 600px) {
       .container {
         margin: 10px auto !important;
         padding: 10px 4vw !important;
+      }
+      @media (max-width:600px) {
+        button {
+          padding:0.8rem 1.5rem !important;
+          font-size:1em !important;
   }
 }
 
+    p, li {
+      font-size: 18px !important;
+    line-height: 1.5;
+}
+   table {
+  font-size: 16px;
+}
 
+
+      header {
+        padding: 24px 0 12px 0 !important;
+      }
+      h1, h2 {
+        font-size: 1.3em !important;
+        margin-top: 0.5em !important;
+        font-weight: bold !important;
+        letter-spacing: 0.5px !important;
+      }
+      .compact-nav {
+  scrollbar-width: thin;
+  scrollbar-color: #e63946 #f8f9fa;
+}
+
+.nav-link {
+  color: #002244;
+  text-decoration: none;
+  white-space: nowrap;
+  padding:0.5rem 1rem;
+  border-radius:20px;
+  background:#f8f9fa;
+  transition:all 0.3s;
+  border:1px solid #e63946;
+}
+
+.nav-link:hover {
+  background:#e63946;
+  color:white;
+}
+@media (max-width: 600px) {
+  /* Add this */
+  .data-viz div {
+    grid-template-columns: 1fr !important; 
+  }
+}
+@media (max-width:600px) {
+  .nav-link {
+    font-size:0.9em;
+    padding:0.4rem 0.8rem;
+  }
+}
+      
+      .byline, .update-date {
+        margin-bottom: 1em !important;
+      }
+      .patriot-alert {
+        margin: 1rem !important;
+        padding: 1rem !important;
+      }
     }
-  </style>
+    </style>
+    
 </head>
 <body>
   <div class="container">
@@ -198,7 +259,19 @@ body, html {
       <div class="byline">Published: Sunday, May 4, 2025</div>
       <div class="update-date" id="last-updated"></div>
     </header>
-      <!-- START WITH CONCLUSION -->
+
+    <div class="compact-nav" style="margin:2rem 0; border-bottom:2px solid #e63946;">
+      <div style="display:flex; gap:1rem; overflow-x:auto; padding-bottom:0.5rem;">
+        <a href="#foreign-control" class="nav-link">Foreign Control</a>
+        <a href="#owners" class="nav-link">Media Owners</a>
+        <a href="#conglomerates" class="nav-link">US Giants</a>
+        <a href="#deserts" class="nav-link">News Deserts</a>
+        <a href="#lifestyles" class="nav-link">Billionaires</a>
+      </div>
+    </div>
+    
+    
+
       <div class="patriot-alert" style="background:#f8f9fa; padding:2rem; border-radius:12px; border:3px solid #e63946; margin:2rem 0;">
         <!-- Introductory Text -->
         <div style="margin-bottom:2rem;">
@@ -304,7 +377,7 @@ body, html {
       </div>
 
       <div style="max-width:700px; margin:2rem auto; padding:1rem; border:3px solid #002244; border-radius:12px; background:#f8f9fa;">
-        <h3 style="text-align:center; margin-bottom:1.5rem; color:#e63946;">FOREIGN CONTROL OF U.S. MEDIA</h3>
+        <h2 id="foreign-control">🦅 Foreign Control of US Media</h2>
         
         <!-- Qatar Bar -->
         <div style="margin-bottom:1.5rem;">
@@ -346,152 +419,7 @@ body, html {
         </div>
       </div>
       
-    <h2 id="owners">The Owners: Wealth, Power, and Priorities</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Owner</th>
-          <th>Net Worth</th>
-          <th>Key Holdings</th>
-          <th>Tactics</th>
-          <th>Foreign Ties</th>
-          <th>Spending</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Jeff Bezos -->
-        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="bezos-details"
-        onclick="toggleDetails('bezos')" onkeypress="if(event.key==='Enter'){toggleDetails('bezos');}">
-        <td>
-          <span id="bezos-arrow">▶</span> Jeff Bezos
-          <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
-        </td>
-        
-      <td>$201.6B (Forbes, May 2025)</td>
-      <td>Amazon (10% stake), Blue Origin, WaPo</td>
-      <td>Prioritizes climate coverage (aligns with Amazon’s $2B Climate Pledge Fund), downplays antitrust scrutiny</td>
-      <td>None known</td>
-      <td>$500M yacht, $165M Beverly Hills mansion, $38B in Amazon stock sold since 1997</td>
-    </tr>
-    <tr class="details-row" id="bezos-details" style="display: none;">
-      <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
-        <div>
-          <strong>More Details:</strong>
-          <ul>
-            <li>WaPo runs 3:1 climate-to-antitrust coverage ratio</li>
-            <li>Amazon’s carbon emissions rose 18% in 2024</li>
-            <li>Amazon receives significant tax breaks for climate PR</li>
-          </ul>
-          <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
-            <strong>Why This Matters:</strong>
-            <ul>
-              <li>Shapes national debate on climate and tech regulation</li>
-              <li>May lead to under-reporting of Amazon’s own controversies</li>
-              <li>Impacts how you see “big tech” in the news</li>
-            </ul>
-          </div>
-        </div>
-      </td>
-    </tr>
-    
-        <!-- Chris Ruddy -->
-        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="ruddy-details"
-            onclick="toggleDetails('ruddy')" onkeypress="if(event.key==='Enter'){toggleDetails('ruddy');}">
-            <td>
-              <span id="ruddy-arrow">▶</span> Chris Ruddy
-              <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
-            </td>
-            
-          <td>$3.3B (Newsmax IPO, 2025)</td>
-          <td>Newsmax</td>
-          <td>Pushes pro-Trump content, IPO surged 735% post-2024 election</td>
-          <td>Qatari royal Sheikh Sultan bin Jassim Al-Thani (15% stake, $1.6B value)</td>
-          <td>$50M Palm Beach estate, $75M on studio upgrades in 2025</td>
-        </tr>
-        <tr class="details-row" id="ruddy-details" style="display: none;">
-          <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
-            <div>
-              <strong>More Details:</strong>
-              <ul>
-                <li>Qatar’s investment ROI: 3200% since 2020</li>
-                <li>Qatar’s influence led to softened Middle East coverage</li>
-                <li>Newsmax’s IPO made Ruddy a billionaire overnight</li>
-              </ul>
-              <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
-                <strong>Why This Matters:</strong>
-                <ul>
-                  <li>Foreign money can shape “patriot” news in the U.S.</li>
-                  <li>Editorial independence may be compromised</li>
-                  <li>What you see as “America First” may be influenced by foreign priorities</li>
-                </ul>
-              </div>
-            </div>
-          </td>
-        </tr>
-    
-        <!-- Rupert Murdoch -->
-        <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="murdoch-details"
-            onclick="toggleDetails('murdoch')" onkeypress="if(event.key==='Enter'){toggleDetails('murdoch');}">
-            <td>
-              <span id="murdoch-arrow">▶</span> Rupert Murdoch
-              <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for more)</span>
-            </td>
-            
-          <td>$23.1B (Forbes, 2025)</td>
-          <td>Fox Corp ($23.1B market cap), News Corp</td>
-          <td>Frames issues as “us vs. elites”; 70% of Fox Corp profits from Fox News’ sensationalism</td>
-          <td>News Corp lobbies for deregulation in the UK</td>
-          <td>$200M Montana ranch, $80M NYC penthouses, billions in divorce settlements</td>
-        </tr>
-        <tr class="details-row" id="murdoch-details" style="display: none;">
-          <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
-            <div>
-              <strong>More Details:</strong>
-              <ul>
-                <li>Fox News drives 70% of parent company profits</li>
-                <li>Border crisis coverage generates $400M/year</li>
-                <li>Major lobbying for deregulation in the UK</li>
-              </ul>
-              <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
-                <strong>Why This Matters:</strong>
-                <ul>
-                  <li>Shapes U.S. political debate, especially on immigration</li>
-                  <li>Profit incentives may drive more sensational coverage</li>
-                  <li>Corporate consolidation impacts local news choices</li>
-                </ul>
-              </div>
-            </div>
-          </td>
-        </tr>
-    
-<!-- Sulzberger Family -->
-<tr class="owner-row" tabindex="0" 
-    onclick="toggleDetails('sulzberger')" 
-    style="cursor:pointer">
-  <td>
-    <span id="sulzberger-arrow">▶</span> Sulzberger Family
-    <span style="color:#888; font-size:0.9em; margin-left:8px;">(click for details)</span>
-  </td>
-  <td>$81M (1% NYT)</td>
-  <td>New York Times</td>
-  <td>68% negative Trump headlines</td>
-  <td>None</td>
-  <td>$550M sports blog gamble</td>
-</tr>
-<tr class="details-row" id="sulzberger-details" style="display: none;">
-  <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
-    <div>
-      <strong>The Athletic Deal:</strong>
-      <ul>
-        <li>Bought losing sports blog for $550M cash</li>
-        <li>1.2M subscribers (mostly fantasy football)</li>
-        <li>Uses sports to push NYT politics</li>
-      </ul>
-    </div>
-  </td>
-</tr>
-      </tbody>
-    </table>
+
 
     <h2>🦅 Foreign Investors: Hidden Hands in U.S. Media</h2>
     <p style="color:#555; margin:1em 0;">
@@ -566,84 +494,547 @@ body, html {
     <div class="why-matters" style="margin-top:1rem;">
       <strong>Why This Matters:</strong> Foreign-controlled algorithms suppressed 18% of 2024 election content per <a href="https://simonmunzert.com/meof/material/green-riley-et-al-foreign-media.pdf" style="color:#e63946">Yale Study [7]</a>, while Saudi Twitter bots boosted oil narratives 24/7.
     </div>
-    <!-- Add under Foreign Investors -->
-    <div class="alert" style="background:#fffae5; padding:1rem; margin:1rem 0;">
-  ⚠️ FCC requires foreign media outlets to disclose ties by <b>April 11, 2025</b> [11]
+    <div style="background:#fffae5; padding:1rem; margin:1rem 0; border-radius:8px;">
+      ⚠️ <b>New FCC Rule:</b> Foreign media must disclose ties by <span style="color:#e63946">April 11, 2025</span>
     </div>
-
     
     <p style="font-size: 1em; color: #555;">
       <em>Note: Some tactics apply only to digital/social media or finance, not all TV networks.</em>
     </p>
+
+<!-- Replace existing "Playbook" table with this -->
+<div class="patriot-alert" style="margin:2rem 0; border-color:#002244;">
+  <h2 style="color:#e63946;">The Foreign Playbook: 5 Tactics Against America</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+    <!-- Foreign Column -->
+    <div style="border-right:2px solid #e63946; padding-right:1.5rem;">
+      <h3>🇨🇳 China's Moves</h3>
+      <ul>
+        <li><b>TikTok:</b> Hides 18% of US election content [9]</li>
+        <li><b>ByteDance:</b> Opaque CCP-linked ownership</li>
+        <li><b>AI Bots:</b> 225% pro-China content boost</li>
+      </ul>
+      
+      <h3>🇶🇦 Qatar's Play</h3>
+      <ul>
+        <li><b>Newsmax:</b> 15% stake ($1.6B) edits Israel coverage [8]</li>
+        <li><b>Lobbying:</b> $4.2M on FCC deregulation</li>
+      </ul>
+    </div>
+
+    <!-- Domestic Column -->
+    <div style="padding-left:1.5rem;">
+      <h3>🇺🇸 Domestic Enablers</h3>
+      <ul>
+        <li><b>Fox News:</b> 400+ hours/year border fear ($400M profit) [20]</li>
+        <li><b>Meta:</b> Rage farming algorithms ($1.2B political ad revenue) [4]</li>
+        <li><b>Gannett:</b> Closed 127 local papers since 2022 [15]</li>
+      </ul>
+      
+      <h3>🛡️ Patriot Defense Kit</h3>
+      <ol>
+        <li>Use <a href="#owners">Owner Table</a> before sharing news</li>
+        <li>Support H.R.906: Foreign Adversary Comms Act</li>
+        <li>Demand algorithm transparency at town halls</li>
+      </ol>
+    </div>
+  </div>
+</div>    
+  </div>
+  <p style="color:#666; margin:2rem 0; font-size:1.1em; border-left:3px solid #002244; padding-left:1rem;">
+    While foreign powers invest heavily, America's own media giants are consolidating control through mergers, layoffs, and algorithmic manipulation.
+  </p>
+  <h2 id="conglomerates">🇺🇸 Major US Media Conglomerates</h2>
+
+    <!-- Gannett Co. -->
+    <details class="conglomerate">
+      <summary>📰 Gannett Co. ($3.9B Revenue, 250+ papers)</summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Key Facts:</strong>
+            <ul>
+              <li>Lost 16% circulation in 2024 [13]</li>
+              <li>CEO made $8.4M (76x median employee) [4]</li>
+              <li>Cut 11% workforce in 2024 (2,800 jobs) [16]</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Tactics:</strong>
+            <ul>
+              <li>Outsourced delivery to USPS [13]</li>
+              <li>Closed 127 papers since 2022 [15]</li>
+              <li>Eliminated AP subscriptions [14]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="conglomerate">
+      <summary>🏰 Disney ($91.36B Revenue)</summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Key Assets:</strong>
+            <ul>
+              <li>ABC Network</li>
+              <li>ESPN (80% stake)</li>
+              <li>Marvel Studios</li>
+            </ul>
+          </div>
+          <div>
+            <strong>2024 Stats:</strong>
+            <ul>
+              <li>Disney+ 149M subscribers</li>
+              <li>$7B Marvel movie revenue</li>
+              <li>12% layoffs in 2023</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
     
-    <h2>The Playbook: How Media Owners Profit From Outrage</h2>
-    <table>
-      <tr> <!-- Header -->
-        <th>Tactic</th>
-        <th>Fox News Example</th>
-        <th>Social Media Example</th> 
-        <th>Foreign Impact</th>
-      </tr>
-      <tr> <!-- Data rows -->
-        <td>Border Fear Stories</td>
-        <td>400+ hours/year ($400M)</td>
-        <td>TikTok hides 18% election posts</td>
-        <td>Qatar edits Israel coverage</td>
-      </tr>
-      <tr>
-        <td>Algorithm Manipulation</td>
-        <td>N/A</td>
-        <td>TikTok boosts pro-China content by 225%</td>
-        <td>China suppresses US election videos</td>
-      </tr>
-      <tr>
-        <td>SWF Investments</td>
-        <td>Trump's $1.9B media fund proposal</td>
-        <td>Saudi $600B Twitter/X investment</td>
-        <td>Promotes pro-Saudi oil narratives</td>
-      </tr>
-      <tr>
-        <td>Ad Revenue Surges</td>
-        <td>$2.4B in 2025 (21% increase)</td>
-        <td>"Trump Trials" blog: $8M revenue</td>
-        <td>Qatar's Newsmax ROI: 3200%</td>
-      </tr>
-      <tr>
-        <td>Sports Leverage</td>
-        <td>Super Bowl LIX: $8M/30sec ads</td>
-        <td>Tubi streams Super Bowl (+31% revenue)</td>
-        <td>UAE invests $1.5B in AI media tools</td>
-      </tr>
-    </table>
-    <div class="why-matters" style="margin-top:1rem;">
-      <strong>Hidden Impact:</strong> Facebook's 2020 "break glass" algorithm cut misinformation by 24% but reverted post-election per <a href="https://www.umass.edu/news/article/team-led-umass-amherst-debunks-research-showing-facebooks-news-feed-algorithm-curbs" style="color:#e63946">UMass Research [12]</a>.
+    
+    <!-- Comcast/NBCUniversal -->
+    <details class="conglomerate">
+      <summary>🏆 Comcast/NBCUniversal ($124B Revenue) </summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Key Assets:</strong>
+            <ul>
+              <li>NBC Broadcast Network</li>
+              <li>Peacock (36M subscribers) [14]</li>
+              <li>Universal Studios</li>
+            </ul>
+          </div>
+          <div>
+            <strong>2024 Highlights:</strong>
+            <ul>
+              <li>Peacock loss narrowed to $372M [14]</li>
+              <li>NBC Sports' most-watched year since 2016 [8]</li>
+              <li>"Wicked" boosted studio profits 50% [14]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+    
+    <!-- Fox Corporation -->
+    <details class="conglomerate">
+      <summary>🦊 Fox Corporation ($15.18B Revenue)</summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Key Properties:</strong>
+            <ul>
+              <li>Fox News</li>
+              <li>Tubi (FAST leader)</li>
+              <li>Big Ten Network (61% stake)</li>
+            </ul>
+          </div>
+          <div>
+            <strong>2024 Wins:</strong>
+            <ul>
+              <li>UEFA Euro viewership +34% [5]</li>
+              <li>College football ratings best since 2009 [2]</li>
+              <li>$7.3B returned to shareholders [5]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+    
+    <!-- Warner Bros. Discovery -->
+    <details class="conglomerate">
+      <summary>🎬 Warner Bros. Discovery ($39B Revenue)</summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Streaming Power:</strong>
+            <ul>
+              <li>Max/HBO/Discovery+ bundle</li>
+              <li>31.7M music subscribers [8]</li>
+              <li>"Barbie" generated $1B+ box office [3]</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Challenges:</strong>
+            <ul>
+              <li>Lost 1M+ streaming subs in 2023 [3]</li>
+              <li>Theatrical revenue down 17% [3]</li>
+              <li>DC Universe restructuring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+    
+    <!-- Paramount Global -->
+    <details class="conglomerate">
+      <summary>📺 Paramount Global ($19B TV Revenue)</summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Core Strengths:</strong>
+            <ul>
+              <li>CBS Network</li>
+              <li>Paramount+ (tripled subs since 2021) [4]</li>
+              <li>Showtime/MTV cable portfolio</li>
+            </ul>
+          </div>
+          <div>
+            <strong>2024 Shifts:</strong>
+            <ul>
+              <li>DTC revenue grew 46% [4]</li>
+              <li>TV ad revenue flat at $8.2B [4]</li>
+              <li>Filmed entertainment revenue -15% [4]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+    
+    <!-- Sinclair Broadcast Group -->
+    <details class="conglomerate">
+      <summary>📡 Sinclair Broadcast Group ($3.6B Revenue, 185 stations)</summary>
+      <div class="content-wrapper">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+          <div>
+            <strong>Reach:</strong>
+            <ul>
+              <li>40% of US households</li>
+              <li>78M pay-TV subscribers [7]</li>
+              <li>#1 owner of local sports rights</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Controversies:</strong>
+            <ul>
+              <li>"Must Run" conservative segments [14]</li>
+              <li>$4.2M FCC lobbying in 2024</li>
+              <li>RSN bankruptcy fallout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <div style="background:#f8f9fa; padding:1.5rem; border-radius:12px; margin:2rem 0;">
+      <h2 style="color:#002244; text-align:center; margin-bottom:1.5rem;">
+        <h2 id="deserts">📰 Local News Deserts: 208 Counties & Counting 📰</h2>
+              </h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div style="background:#fff; padding:1.2rem; border-radius:10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <h3 style="color:#e63946; margin-top:0;">Worst Affected States</h3>
+          <ul style="font-size:1.08em;">
+            <li>🇺🇸 <b>Texas</b>: 27 news desert counties</li>
+            <li>🇺🇸 <b>North Carolina</b>: 15 counties with 1 paper</li>
+            <li>🗺️ <b>Midwest</b>: 43 counties lost last paper in 2024</li>
+          </ul>
+        </div>
+        <div style="background:#fff; padding:1.2rem; border-radius:10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <h3 style="color:#457b9d; margin-top:0;">Why It Matters</h3>
+          <ul style="font-size:1.08em;">
+            <li>💸 23% higher municipal borrowing costs</li>
+            <li>🗳️ 18% lower voter turnout</li>
+            <li>⚠️ +15% corruption cases in news deserts</li>
+          </ul>
+        </div>
+      </div>
+      <blockquote style="margin-top:1.5rem; font-style: italic; color: #555; border-left: 4px solid #e63946; padding-left: 1rem;">
+        "News desert residents are 38% more likely to believe election misinformation." <br>
+        <span style="font-size:0.95em;">- Medill 2024 Report</span>
+      </blockquote>
     </div>
     
-    <h2>Lifestyles of the Rich and Mediated</h2>
-    <ul>
-      <blockquote style="border-color:#e63946; margin:1.5rem 0;">
-        "We don’t begrudge billionaires their toys-but when your ‘hobby’ shapes what 330 million Americans see as reality, it’s time for transparency."<br>
-        <span style="font-size:0.9em">- Columbia Journalism Review, 2025 [9]</span>
-      </blockquote>
-      <li><b>Murdoch:</b> Hosts annual “libertarian retreats” at his $200M Montana ranch with tech CEOs and GOP donors</li>
-      <li><b>Bezos:</b> Funds $10B Earth Fund while Amazon’s carbon emissions rise 18% in 2024</li>
-      <li><b>Zuckerberg:</b> Bought $23M DC "embassy" near White House </li>
-      <li><b>Zuckerberg's Bunker:</b> $270M Hawaii compound with election ad profits</li>
-    </ul>
+  
 
-    <h2>🇺🇸 Conclusion: The News Is Shaped by Those Who Own It</h2>
-    <p>
-      In 2025 alone: Foreign investors pulled $63B from US stocks (Goldman Sachs), while Saudi Arabia proposed $600B in new investments and Abu Dhabi poured $1.5B into AI media tools. The FCC now wants to relax foreign ownership rules for broadcaster -meaning this battle is just beginning.
-    </p>
-    <p style="text-align: center; font-style: italic; color: #e63946">
-      "A well-informed citizenry is the foundation of democracy." - Thomas Jefferson
-    </p>
+
+
+<h2 id="owners">The Owners: Wealth, Power, and Priorities</h2>
+<table>
+<thead>
+  <tr>
+    <th>Owner</th>
+    <th>Net Worth</th>
+    <th>Key Holdings</th>
+    <th>Tactics</th>
+    <th>Foreign Ties</th>
+    <th>Spending</th>
+  </tr>
+</thead>
+<tbody>
+  <!-- Jeff Bezos -->
+  <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="bezos-details"
+  onclick="toggleDetails('bezos')" onkeypress="if(event.key==='Enter'){toggleDetails('bezos');}">
+  <td>
+    <span id="bezos-arrow">▶</span> Jeff Bezos
+    <span style="color:#666; font-size:0.9em; margin-left:8px;">(click for more)</span>
+  </td>
+  
+<td>$201.6B (Forbes, May 2025)</td>
+<td>Amazon (10% stake), Blue Origin, WaPo</td>
+<td>Prioritizes climate coverage (aligns with Amazon’s $2B Climate Pledge Fund), downplays antitrust scrutiny</td>
+<td>None known</td>
+<td>$500M yacht, $165M Beverly Hills mansion, $38B in Amazon stock sold since 1997</td>
+</tr>
+<tr class="details-row" id="bezos-details" style="display: none;">
+<td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+  <div>
+    <strong>More Details:</strong>
+    <ul>
+      <li>WaPo runs 3:1 climate-to-antitrust coverage ratio</li>
+      <li>Amazon’s carbon emissions rose 18% in 2024</li>
+      <li>Amazon receives significant tax breaks for climate PR</li>
+    </ul>
+    <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+      <strong>Why This Matters:</strong>
+      <ul>
+        <li>Shapes national debate on climate and tech regulation</li>
+        <li>May lead to under-reporting of Amazon’s own controversies</li>
+        <li>Impacts how you see “big tech” in the news</li>
+      </ul>
+    </div>
+  </div>
+</td>
+</tr>
+
+  <!-- Chris Ruddy -->
+  <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="ruddy-details"
+      onclick="toggleDetails('ruddy')" onkeypress="if(event.key==='Enter'){toggleDetails('ruddy');}">
+      <td>
+        <span id="ruddy-arrow">▶</span> Chris Ruddy
+        <span style="color:#666; font-size:0.9em; margin-left:8px;">(click for more)</span>
+      </td>
+      
+    <td>$3.3B (Newsmax IPO, 2025)</td>
+    <td>Newsmax</td>
+    <td>Pushes pro-Trump content, IPO surged 735% post-2024 election</td>
+    <td>Qatari royal Sheikh Sultan bin Jassim Al-Thani (15% stake, $1.6B value)</td>
+    <td>$50M Palm Beach estate, $75M on studio upgrades in 2025</td>
+  </tr>
+  <tr class="details-row" id="ruddy-details" style="display: none;">
+    <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+      <div>
+        <strong>More Details:</strong>
+        <ul>
+          <li>Qatar’s investment ROI: 3200% since 2020</li>
+          <li>Qatar’s influence led to softened Middle East coverage</li>
+          <li>Newsmax’s IPO made Ruddy a billionaire overnight</li>
+        </ul>
+        <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+          <strong>Why This Matters:</strong>
+          <ul>
+            <li>Foreign money can shape “patriot” news in the U.S.</li>
+            <li>Editorial independence may be compromised</li>
+            <li>What you see as “America First” may be influenced by foreign priorities</li>
+          </ul>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+  <!-- Rupert Murdoch -->
+  <tr class="owner-row" tabindex="0" aria-expanded="false" aria-controls="murdoch-details"
+      onclick="toggleDetails('murdoch')" onkeypress="if(event.key==='Enter'){toggleDetails('murdoch');}">
+      <td>
+        <span id="murdoch-arrow">▶</span> Rupert Murdoch
+        <span style="color:#666; font-size:0.9em; margin-left:8px;">(click for more)</span>
+      </td>
+      
+    <td>$23.1B (Forbes, 2025)</td>
+    <td>Fox Corp ($23.1B market cap), News Corp</td>
+    <td>Frames issues as “us vs. elites”; 70% of Fox Corp profits from Fox News’ sensationalism</td>
+    <td>News Corp lobbies for deregulation in the UK</td>
+    <td>$200M Montana ranch, $80M NYC penthouses, billions in divorce settlements</td>
+  </tr>
+  <tr class="details-row" id="murdoch-details" style="display: none;">
+    <td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+      <div>
+        <strong>More Details:</strong>
+        <ul>
+          <li>Fox News drives 70% of parent company profits</li>
+          <li>Border crisis coverage generates $400M/year</li>
+          <li>Major lobbying for deregulation in the UK</li>
+        </ul>
+        <div style="background: #fffae5; padding: 1em; border-radius: 4px;">
+          <strong>Why This Matters:</strong>
+          <ul>
+            <li>Shapes U.S. political debate, especially on immigration</li>
+            <li>Profit incentives may drive more sensational coverage</li>
+            <li>Corporate consolidation impacts local news choices</li>
+          </ul>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+<!-- Sulzberger Family -->
+<tr class="owner-row" tabindex="0" 
+onclick="toggleDetails('sulzberger')" 
+style="cursor:pointer">
+<td>
+<span id="sulzberger-arrow">▶</span> Sulzberger Family
+<span style="color:#666; font-size:0.9em; margin-left:8px;">(click for details)</span>
+</td>
+<td>$81M (1% NYT)</td>
+<td>New York Times</td>
+<td>68% negative Trump headlines</td>
+<td>None</td>
+<td>$550M sports blog gamble</td>
+</tr>
+<tr class="details-row" id="sulzberger-details" style="display: none;">
+<td colspan="6" style="background: #f8f9fa; border-left: 4px solid #0055a5;">
+<div>
+<strong>The Athletic Deal:</strong>
+<ul>
+  <li>Bought losing sports blog for $550M cash</li>
+  <li>1.2M subscribers (mostly fantasy football)</li>
+  <li>Uses sports to push NYT politics</li>
+</ul>
+</div>
+</td>
+</tr>
+
+
+</tbody>
+</table>
+
+    <h2 id="lifestyles">💼 Lifestyles of the Rich and Mediated</h2>
+
+    <blockquote style="border-color:#e63946; margin:1.5rem 0;">
+      "We don’t begrudge billionaires their toys-but when your ‘hobby’ shapes what 330 million Americans see as reality, it’s time for transparency."
+      <br>
+      <span style="font-size:0.9em">- Columbia Journalism Review, 2025</span>
+    </blockquote>
+    <ul>
+      <li>
+        <b>Rupert Murdoch:</b> Owns the 340,000-acre Beaverhead Ranch in Montana (largest in state history, $200M, bought from Koch family).
+        <details>
+          <summary>More about Murdoch’s Montana empire 🇺🇸</summary>
+          <div style="padding:0.5em 1em;">
+            <ul>
+              <li>Ranch employs 15 local families and supports 7,000 cattle <span style="color:#666;">(Montana Labor Dept)</span></li>
+              <li>Hosts annual “libertarian retreats” with tech CEOs, GOP donors, and power brokers</li>
+              <li>Known for blending business, media, and political influence in private settings</li>
+              <li>“We feel privileged to assume ownership of this beautiful land and look forward to continually enhancing both the commercial cattle business and the conservation assets across the ranch.” - Murdoch</li>
+            </ul>
+          </div>
+        </details>
+      </li>
+      <li>
+        <b>Jeff Bezos:</b> Funds $10B Earth Fund, but Amazon’s carbon emissions rose 18% in 2024.
+        <details>
+          <summary>More about Bezos’ double life 🌎</summary>
+          <div style="padding:0.5em 1em;">
+            <ul>
+              <li>Bezos Earth Fund stopped funding Science Based Targets initiative in 2025 <span style="color:#666;">[3]</span></li>
+              <li>Owns The Washington Post (since 2013), influencing national news coverage <span style="color:#666;">[4]</span></li>
+              <li>Critics note a disconnect between climate philanthropy and Amazon’s rising emissions</li>
+              <li>“Billionaires bowing down to Trump” as climate action funding wanes, per climate advocates</li>
+            </ul>
+          </div>
+        </details>
+      </li>
+      <li>
+        <b>Mark Zuckerberg:</b> Bought $23M DC "embassy" near the White House and “Z Bunker,” a $270M Hawaii compound, both funded by Meta’s ad profits.
+        <details>
+          <summary>More on Zuck’s fortress mentality 🏝️</summary>
+          <div style="padding:0.5em 1em;">
+            <ul>
+              <li>DC mansion serves as Meta’s “embassy” for lobbying and influence</li>
+              <li>Hawaii compound features tunnels, panic rooms, and private security teams</li>
+              <li>Meta’s political ad revenue topped $1.2B in 2024</li>
+              <li>Critics say: “When your bunker is bigger than your newsroom, it’s time to ask who you’re protecting.”</li>
+            </ul>
+          </div>
+        </details>
+      </li>
+      <li>
+        <b>Elon Musk:</b> Owns Twitter/X, multiple mansions, and a Texas “space ranch.”
+        <details>
+          <summary>More on Musk’s media and real estate reach 🚀</summary>
+          <div style="padding:0.5em 1em;">
+            <ul>
+              <li>Acquired Twitter/X for $44B, now a major global news platform</li>
+              <li>Hosts “Mars Society” events at his Texas ranch</li>
+              <li>Known for direct editorial interventions and public feuds with journalists</li>
+            </ul>
+          </div>
+        </details>
+      </li>
+      <li>
+        <b>Marc Benioff:</b> Bought Time Magazine in 2018, luxury homes in Hawaii and San Francisco.
+        <details>
+          <summary>More on Benioff’s media moves 📰</summary>
+          <div style="padding:0.5em 1em;">
+            <ul>
+              <li>Time Magazine now features Salesforce-driven philanthropy coverage</li>
+              <li>Benioff’s editorial stance: “Capitalism must serve all stakeholders”</li>
+            </ul>
+          </div>
+        </details>
+      </li>
+    </ul>
+    <blockquote style="border-color:#457b9d; margin:1.5rem 0; background:#f8f9fa;">
+      <b>Why it matters:</b> “Billionaire ownership of media isn’t just about luxury-it’s about who gets to shape the national conversation, set the agenda, and decide what’s ‘newsworthy.’”<br>
+      <span style="font-size:0.9em">- DebatingMatters.com, 2025</span>
+    </blockquote>
     
+
+    <h2>🇺🇸 Conclusion: Preserving Truth in the Media Swamp</h2>
+    <div class="key-facts" style="column-count:2; gap:2rem;">
+      <div style="break-inside:avoid;">
+        <h3 style="color:#e63946">Proven Threats</h3>
+        <ul>
+          <li>Foreign investors dumped $63B in US equities (Goldman Sachs)[1][5]</li>
+          <li>Saudi Arabia plans $600B US investments (SAN)[2]</li>
+          <li>UAE's G42 secured $1.5B Microsoft AI deal[3]</li>
+          <li>127 papers closed in 2024 (2.4/week)[9][13]</li>
+          <li>$4.7B media CEO pay vs 12% reporter cuts[14][16]</li>
+          <li>55M Americans in news deserts[9][15]</li>
+        </ul>
+      </div>
+      
+      <div style="break-inside:avoid;">
+        <h3 style="color:#002244">Bipartisan Solutions</h3>
+        <ol>
+          <li><a href="https://www.congress.gov/bill/119th-congress/house-bill/906" target="_blank">H.R.906: Foreign Adversary Comms Act</a></li>
+          <li>Algorithm review boards with public oversight</li>
+          <li>Tax credits for local news startups[9]</li>
+          <li>FCC foreign ownership rule enforcement[4]</li>
+        </ol>
+      </div>
+    </div>
+    
+    <blockquote style="border-color:#002244; margin:2rem 0; padding:1.5rem; background:#f8f9fa;">
+      "When media becomes a foreign asset, truth becomes collateral damage.<br>
+      <span style="font-size:0.9em">- 2025 Defense Department Report on Information Warfare</span>
+    </blockquote>
+    
+    <div style="border-top:2px solid #e63946; padding-top:1.5rem;">
+      <p style="text-align:center; font-style:italic; color:#e63946">
+        "A well-informed citizenry is the foundation of democracy." - Thomas Jefferson
+      </p>
+      <div style="text-align:center; margin:3rem 0;">
+        <button style="background:#e63946; color:white; border:none; padding:1rem 2rem; border-radius:8px; font-size:1.1em; cursor:pointer; transition:all 0.3s;" 
+                onmouseover="this.style.transform='scale(1.05)';" 
+                onmouseout="this.style.transform='scale(1)';">
+          📢 Share This Guide
+        </button>
+        <p style="color:#666; margin-top:0.5rem;">(Patriots are sharing this on Truth Social)</p>
+      </div>
+  
     <p>
       Stay tuned for our next installment: <b><a href="defend-truth-toolkit.html">How to Fight Back: A Patriot's Toolkit for Defending Truth</a>
       </b>
     </p>
 </div>
+<p style="font-size:0.9em; color:#666; margin-top:2rem;">
+  All data current as of May 2025. Sources: SEC filings, Medill 2024, company reports, and congressional records.
+</p>
 
   <script>
     function toggleDetails(owner) {
